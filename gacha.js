@@ -85,3 +85,5 @@ const purchaseGems = (amount) => {
   GEM_COUNT += amount;
   return;
 };
+
+export default {generateRange, testChance}
