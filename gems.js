@@ -1,4 +1,4 @@
-GEM_COUNT = localStorage.getItem("gems");
+export let GEM_COUNT = localStorage.getItem("gems");
 
 const getAmount = () => {
   return GEM_COUNT;
