@@ -58,30 +58,3 @@ const testChance = (probability) => {
 };
 
 testChance(baseProbability);
-
-GEM_COUNT = 201;
-
-const canIRoll = (currGems) => {
-  if (currGems >= 100) {
-    currGems -= 100;
-    GEM_COUNT = currGems;
-    return true;
-  }
-  return false;
-};
-
-const rolling = () => {
-  if (canIRoll(GEM_COUNT)) {
-    console.log("Gems Remaining: " + GEM_COUNT);
-    console.log("Summoned Rimuru Tempest");
-  } else {
-    console.log("Insufficient funds, please whale more before you try again");
-  }
-};
-
-rolling();
-
-const purchaseGems = (amount) => {
-  GEM_COUNT += amount;
-  return;
-};
