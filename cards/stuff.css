@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgrey;
+}
+
+.card {
+    height: 300px;
+    width: 250px;
+    position: relative;
+}
+
+.card:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 20px;
+    background: linear-gradient(-45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    background-position: top;
+    background-size: 100% 300%;
+    animation: flow 3s infinite alternate;
+}
+
+@keyframes flow {
+    0% {
+        background-position: top
+    }
+
+    100% {
+        background-position: bottom
+    }
+}
+
+.card:after {
+    content: "";
+    height: 95%;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    filter: brightness(90%);
+    transform: translate(-50%, -50%);
+    background: url("Inori_1.jpg") no-repeat;
+    background-position: 0% 0%;
+    background-size: 100%;
+    position: absolute;
+}
+
+.attribute {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 40px;
+    width: 40px;
+    z-index: 999;
+    background: url("LIGHT.png") no-repeat;
+    background-position: 0% 0%;
+    background-size: 100%;
+}
+
+.rating {
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+}
+
+.star {
+    height: 30px;
+    width: 30px;
+    z-index: 999;
+    background: url("star.png");
+    background-position: center;
+    background-size: 100%;
+}
+
+.name {
+    position: absolute;
+    width: 95%;
+    height: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 6px;
+    z-index: 999;
+    border-radius: 0 0 20px 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.card1 {
+    height: 300px;
+    width: 250px;
+    position: relative;
+}
+
+.card1:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 20px;
+    background: linear-gradient(0deg,
+            #a1a1a1,
+            #dedede,
+            #ffffff,
+            #a1a1a1,
+            #ffffff,
+            #dedede,
+            #a1a1a1);
+    background-position: top;
+    background-size: 100% 300%;
+    animation: flow 3s infinite alternate;
+}
+
+.card1:after {
+    content: "";
+    height: 95%;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    filter: brightness(90%);
+    transform: translate(-50%, -50%);
+    background: url("unknown.png") no-repeat;
+    background-position: 0% 0%;
+    background-size: 100%;
+    position: absolute;
+}
+
+.attribute1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 40px;
+    width: 40px;
+    z-index: 999;
+    background: url("WIND.png") no-repeat;
+    background-position: 0% 0%;
+    background-size: 100%;
+}
+
+.card2 {
+    height: 300px;
+    width: 250px;
+    position: relative;
+}
+
+.card2:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 20px;
+    background: linear-gradient(0deg, #000000, #C28E0E, #98700D, #000000);
+    background-position: top;
+    background-size: 100% 300%;
+    animation: flow 3s infinite alternate;
+}
+
+.card2:after {
+    content: "";
+    height: 95%;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    filter: brightness(90%);
+    transform: translate(-50%, -50%);
+    background: url("mumen.png") no-repeat;
+    background-position: 0% 0%;
+    background-size: 100%;
+    position: absolute;
+}
