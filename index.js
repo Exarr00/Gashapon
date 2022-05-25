@@ -3,23 +3,35 @@ import gems from "./gems.js";
 
 let history = [];
 let GEM_COUNT = localStorage.getItem("GEMS_AMT");
+document.getElementById("GEM_AMT").textContent = GEM_COUNT;
 
 const baseProbability = roll.generateRange(940, 53, 7);
 // roll.testChance(baseProbability);
 
-const purchaseGems = (amount) => {
-  let GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"));
+const purchaseGems = (e) => {
+  let amount = Number(e.target.value);
+  GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"));
   let newAmount = gems.addAmount(GEM_COUNT, amount);
   localStorage.setItem("GEMS_AMT", newAmount);
+  document.getElementById("GEM_AMT").textContent = GEM_COUNT;
 };
 
-const button = document.getElementById("qwer");
+const useGems = (e) => {
+  let amount = Number(e.target.value);
+  GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"));
+  let newAmount = gems.subtractAmount(GEM_COUNT, amount);
+  localStorage.setItem("GEMS_AMT", newAmount);
+  document.getElementById("GEM_AMT").textContent = GEM_COUNT;
+};
 
-button.addEventListener("click", () => {
-  purchaseGems(100);
+const incrementBtns = document.querySelectorAll("#qwer");
+
+incrementBtns.forEach((btn) => {
+  btn.addEventListener("click", purchaseGems);
 });
 
-const useGems = (amount) => {
-  let newAmount = gems.subtractAmount(GEM_COUNT, amount);
-  localStorage.setItem("gems", newAmount);
-};
+const decrementBtns = document.querySelectorAll("#asdf");
+
+decrementBtns.forEach((btn) => {
+  btn.addEventListener("click", useGems);
+});

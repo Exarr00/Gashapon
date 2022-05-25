@@ -9,12 +9,30 @@
 </head>
 
 <body style="background-color: gray;">
-    <button id="qwer">ADD 100</button>
-    <button onclick="purchaseGems(340)">ADD 340</button>
-    <button onclick="purchaseGems(1340)">ADD 1340</button>
-    <button onclick="subtractAmount(100)">SUB 100</button>
-    <button onclick="rolling()">ROLL</button>
-    <dialog></dialog>
+    <div style="font-size: 32px; font-weight: bold;"">
+        <span>Whale Section</span>
+        <button style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+        id="qwer" value="100">ADD 100</button>
+        <button style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+            id="qwer" value="340">ADD 340</button>
+        <button style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+            id="qwer" value="1340">ADD 1340</button>
+    </div>
+
+    <div style="margin: 2rem 1rem; font-size: 32px; font-weight: bold;">
+        Current Gem Count: <span id="GEM_AMT"></span>
+    </div>
+    <div style="height: 300px; width: 300px; margin: 3rem 5rem;">
+        <img style="height: 100%;" src="./hutaocelebrate.gif">
+    </div>
+    <div>
+        <button style="border: 2px solid black; height: 60px; width: 200px; letter-spacing: 2px;" id="asdf"
+            value="100">SINGLE
+            SUMMON</button>
+        <button style="border: 2px solid black; height: 60px; width: 200px;  letter-spacing: 2px;" id="asdf"
+            value="1000">MULTI
+            SUMMON</button>
+    </div>
 </body>
 <script type="module" src="index.js"></script>
 
