@@ -1,10 +1,19 @@
+
+import gacha from './gacha.js';
+import characters from './characters.json' assert { type: 'json' };
+
 import roll from "./gacha.js";
 import gems from "./gems.js";
-
 let history = [];
 let GEM_COUNT = localStorage.getItem("GEMS_AMT");
 document.getElementById("GEM_AMT").textContent = GEM_COUNT;
 
+
+console.log(characters);
+const baseProbability = gacha.generateRange(940, 53, 7);
+gacha.setGacha(characters);
+console.log(gacha.roll(baseProbability))
+console.log(gacha.multiRoll(baseProbability))
 const baseProbability = roll.generateRange(940, 53, 7);
 // roll.testChance(baseProbability);
 
@@ -35,3 +44,4 @@ const decrementBtns = document.querySelectorAll("#asdf");
 decrementBtns.forEach((btn) => {
   btn.addEventListener("click", useGems);
 });
+
