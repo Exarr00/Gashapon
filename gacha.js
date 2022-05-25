@@ -1,5 +1,7 @@
 let gacha = [];
 let pullCounter = 0;
+let sinceLastFour = 0;
+let sinceLastFive = 0;
 let guaranteedFourStar = false;
 let guaranteedFiveStar = false;
 
@@ -51,8 +53,9 @@ const roll = (array) => {
 
 const multiRoll = (array) => {
     for (let i = 0; i < 10; i++) {
-        return roll(array);
+        console.log(roll(array));
     }
+    return "done"
 };
 
 
