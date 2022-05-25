@@ -16,13 +16,12 @@ const singleSummon = document.getElementById('single');
 const multiSummon = document.getElementById('multi');
 
 singleSummon.addEventListener('click', () =>
-    console.log(gacha.roll(baseProbability))
+    console.log(gacha.roll())
 );
 multiSummon.addEventListener('click', () =>
-    console.log(gacha.multiRoll(baseProbability))
+    console.log(gacha.multiRoll())
 );
 
-const baseProbability = gacha.generateRange(940, 53, 7);
 
 const purchaseGems = (e) => {
     let amount = Number(e.target.value);

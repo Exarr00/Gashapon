@@ -1,7 +1,7 @@
 let gacha = [];
-let pullCounter = 0;
-let sinceLastFour = 0;
-let sinceLastFive = 0;
+let fiveStarCounter = 0;
+let fourStarCounter = 0;
+let onSoft = false;
 let guaranteedFourStar = false;
 let guaranteedFiveStar = false;
 
@@ -46,38 +46,97 @@ const shuffle = (array) => {
     return array;
 };
 
-const roll = (array) => {
-    pullCounter += 1;
-    return getResult(array[getRandNum(array.length)]);
-};
-
-const multiRoll = (array) => {
-    for (let i = 0; i < 10; i++) {
-        console.log(roll(array));
+const roll = () => {
+    fourStarCounter++;
+    fiveStarCounter++;
+    if (fourStarCounter === 10) {
+        return getResult(4);
+    } else if (fiveStarCounter === 100 || fiveStarCounter === 135) {
+        return getResult(5);
+    } else {
+        if (!onSoft) {
+            return getResult(
+                baseProbability[getRandNum(baseProbability.length)]
+            );
+        } else {
+            return getResult(
+                pityProbability[getRandNum(pityProbability.length)]
+            );
+        }
     }
-    return "done"
 };
 
+const multiRoll = () => {
+    const multiResults = [];
+    for (let i = 0; i < 10; i++) {
+        multiResults.push(roll());
+    }
+    return multiResults;
+};
 
 const getResult = (rarity) => {
-    const newArr = gacha.filter((unit) => unit.rating === rarity);
-    const chosen = newArr[getRandNum(newArr.length)];
-    return chosen;
+    if (rarity === 3) {
+        return getThreeStar();
+    } else if (rarity === 4) {
+        return getFourStar();
+    } else if (rarity === 5) {
+        return getFiveStar();
+    }
+};
+
+const getUnits = (rarity) => {
+    const unitArr = gacha.filter((unit) => unit.rating === rarity);
+    return unitArr;
+};
+
+const coinToss = () => {
+    return getRandNum(2);
 };
 
 const getThreeStar = () => {
-    console.log(3);
+    const threeStars = getUnits(3);
+    return threeStars[getRandNum(threeStars.length - 1)];
 };
 
 const getFourStar = () => {
-    console.log(4);
+    const fourStars = getUnits(4);
+    if (!guaranteedFourStar) {
+        guaranteedFourStar = coinToss();
+    }
+    if (guaranteedFourStar) {
+        guaranteedFourStar = false;
+        fourStarCounter = 0;
+        const randFeaturedFour = getRandNum(3);
+        return fourStars.filter((star) => star.featured === true)[
+            randFeaturedFour
+        ];
+    }
+    guaranteedFourStar = true;
+    fourStarCounter = 0;
+    const randFour = getRandNum(fourStars.length - 3);
+    return fourStars.filter((star) => star.featured === false)[randFour];
 };
 
 const getFiveStar = () => {
-    console.log(5);
+    const fiveStars = getUnits(5);
+    if (!guaranteedFiveStar) {
+        guaranteedFiveStar = coinToss();
+    }
+    if (guaranteedFiveStar) {
+        guaranteedFiveStar = false;
+        onSoft = false;
+        fiveStarCounter = 0;
+        return fiveStars.filter((star) => star.featured === true)[0];
+    }
+    guaranteedFiveStar = true;
+    fiveStarCounter = 100;
+    onSoft = true;
+    const randFive = getRandNum(fiveStars.length - 1);
+    return fiveStars.filter((star) => star.featured === false)[randFive];
 };
 
 const baseProbability = generateRange(940, 53, 7);
+const pityProbability = generateRange(932, 54, 15);
 
 // const testChance = (probability) => {
 //   for (let i = 0; i < 100; i++) {
@@ -104,7 +163,4 @@ const baseProbability = generateRange(940, 53, 7);
 
 // testChance(baseProbability);
 
-export default { generateRange, roll, setGacha, multiRoll };
-
-
-
+export default { roll, setGacha, multiRoll };
