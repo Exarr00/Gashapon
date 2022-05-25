@@ -14,7 +14,6 @@ const baseProbability = gacha.generateRange(940, 53, 7);
 gacha.setGacha(characters);
 console.log(gacha.roll(baseProbability))
 console.log(gacha.multiRoll(baseProbability))
-const baseProbability = roll.generateRange(940, 53, 7);
 // roll.testChance(baseProbability);
 
 const purchaseGems = (e) => {

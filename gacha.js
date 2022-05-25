@@ -103,7 +103,5 @@ const baseProbability = generateRange(940, 53, 7);
 
 export default { generateRange, roll, setGacha, multiRoll };
 
-// testChance(baseProbability);
 
-export default { generateRange, testChance };
 
