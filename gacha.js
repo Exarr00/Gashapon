@@ -55,6 +55,7 @@ const multiRoll = (array) => {
     }
 };
 
+
 const getResult = (rarity) => {
     const newArr = gacha.filter((unit) => unit.rating === rarity);
     const chosen = newArr[getRandNum(newArr.length)];
@@ -101,3 +102,8 @@ const baseProbability = generateRange(940, 53, 7);
 // testChance(baseProbability);
 
 export default { generateRange, roll, setGacha, multiRoll };
+
+// testChance(baseProbability);
+
+export default { generateRange, testChance };
+

@@ -1,17 +1,13 @@
-export let GEM_COUNT = localStorage.getItem("gems");
-
-const getAmount = () => {
-  return GEM_COUNT;
+const addAmount = (currAmount, amount) => {
+  currAmount += amount;
+  return currAmount;
 };
 
-const addAmount = (amount) => {
-  GEM_COUNT += amount;
-  localStorage.setItem("gems", GEM_COUNT);
+const subtractAmount = (currAmount, amount) => {
+  if (currAmount >= amount) {
+    currAmount -= amount;
+  }
+  return currAmount;
 };
 
-const subtractAmount = (amount) => {
-  GEM_COUNT -= amount;
-  localStorage.setItem("gems", GEM_COUNT);
-};
-
-export { getAmount, addAmount, subtractAmount };
+export default { addAmount, subtractAmount };
