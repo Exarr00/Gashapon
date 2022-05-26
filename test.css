@@ -88,12 +88,6 @@ select {
   gap: 0.5rem;
 }
 
-.right_align_section p {
-  font-weight: bold;
-  width: fit-content;
-  text-align: center;
-}
-
 .modal_btns {
   font-size: 1rem;
 }
