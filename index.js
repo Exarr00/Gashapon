@@ -3,7 +3,9 @@ import gacha from "./gacha.js";
 
 import gems from "./gems.js";
 
+//get user's gem data from localstorage
 let GEM_COUNT = localStorage.getItem("GEMS_AMT");
+//set user's gem data to element
 document.getElementById("GEM_AMT").textContent = GEM_COUNT;
 
 services().then((data) => {
@@ -12,6 +14,7 @@ services().then((data) => {
   multiSummon.disabled = false;
 });
 
+//check if user has reached >10k gems
 const whaleWatchers = () => {
   let gems = localStorage.getItem("GEMS_AMT");
   let icon = document.getElementById("whale_icon");
@@ -24,9 +27,12 @@ const whaleWatchers = () => {
   document.getElementById("whale_icon").setAttribute("hidden", true);
 };
 
+whaleWatchers();
+
 const singleSummon = document.getElementById("single");
 const multiSummon = document.getElementById("multi");
 
+//single summon
 singleSummon.addEventListener("click", (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
@@ -37,6 +43,7 @@ singleSummon.addEventListener("click", (e) => {
   }
 });
 
+//multi summon
 multiSummon.addEventListener("click", (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
@@ -49,6 +56,7 @@ multiSummon.addEventListener("click", (e) => {
 
 const incrementBtns = document.querySelectorAll("#qwer");
 
+//purchasing gems function
 incrementBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"));
