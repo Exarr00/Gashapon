@@ -6,34 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./test.css" />
 </head>
 
 <body style="background-color: gray;">
-    <div style="font-size: 32px; font-weight: bold;"">
-        <span>Whale Section</span>
-        <button style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
-        id="qwer" value="100">ADD 100</button>
-        <button style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
-            id="qwer" value="340">ADD 340</button>
-        <button style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
-            id="qwer" value="1340">ADD 1340</button>
+    <div class="header_bar">
+        <div class="right_align_section">
+            <p>Whale Section</p>
+            <div class="gem_amount">
+                Current Gem Count: <span id="GEM_AMT"></span>
+            </div>
+            <button class="modal_btns open-button">BUY GEMS</button>
+            <div class="status_level">
+                <img style="height: 100%;" src="whale.png">
+            </div>
+        </div>
     </div>
+    <dialog class="modal" id="modal">
+        <h2>Purchase Gems</h2>
+        <div class="purchase_selection">
+            <button
+                style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+                id="qwer" value="100">ADD 100</button>
+            <button
+                style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+                id="qwer" value="340">ADD 340</button>
+            <button
+                style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+                id="qwer" value="1340">ADD 1340</button>
+        </div>
+        <button class="button close-button">close modal</button>
 
-    <div style="margin: 2rem 1rem; font-size: 32px; font-weight: bold;">
-        Current Gem Count: <span id="GEM_AMT"></span>
+
+    </dialog>
+    <div style="height: 300px; width: 300px;">
+        <video height="300px" width="300px" autoplay="true">
+            <source src="./cards/5starwish-single.mp4" type="video/mp4">
+        </video>
     </div>
-    <div style="height: 300px; width: 300px; margin: 3rem 5rem;">
-        <img style="height: 100%;" src="./hutaocelebrate.gif">
-    </div>
-    <div>
-        <button id="single" style="border: 2px solid black; height: 60px; width: 200px; letter-spacing: 2px;" id="asdf"
-            value="100" disabled>SINGLE
+    <div class="summon_btns">
+        <button id="single" value="100" id="asdf" disabled>SINGLE
             SUMMON</button>
-        <button id="multi" style="border: 2px solid black; height: 60px; width: 200px;  letter-spacing: 2px;" id="asdf"
-            value="1000" disabled>MULTI
+        <button id="multi" id="asdf" value="1000" disabled>MULTI
             SUMMON</button>
     </div>
 </body>
 <script type="module" src="index.js"></script>
+<script>
+    const modal = document.querySelector("#modal");
+    const openModal = document.querySelector(".open-button");
+    const closeModal = document.querySelector(".close-button");
+
+    openModal.addEventListener("click", () => {
+        modal.showModal();
+    });
+
+    closeModal.addEventListener("click", () => {
+        modal.close();
+    });
+</script>
 
 </html>
