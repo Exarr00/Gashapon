@@ -85,19 +85,19 @@
         object-fit: cover;
     }
 
-    .container{
+    .container {
         position: absolute;
         background-color: black;
-        top:0;
-        left:0;
-        height:100%;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 100%;
         display: none;
         place-content: center;
         z-index: 1000;
     }
 
-    .box{
+    .box {
         width: 75vw;
         height: 35vh;
         background-color: grey;
@@ -107,65 +107,67 @@
         display: grid;
     }
 
-    .cards{
+    .cards {
         position: relative;
-        width:50px;
+        width: 50px;
         height: 100px;
         background-color: white;
         animation-timing-function: ease-in;
     }
 
     @keyframes slidein {
-        from{
+        from {
             transform: translateY(1000px);
-            opacity:0;
+            opacity: 0;
         }
-        to{
+
+        to {
             transform: translateY(0px);
-            opacity:1;
+            opacity: 1;
         }
     }
 
-    
+
     @keyframes slidedown {
-        from{
+        from {
             transform: translateY(-1000px)
         }
-        to{
+
+        to {
             transform: translateY(0px)
         }
     }
 
-    button{
+    button {
         user-select: none;
     }
 
-    .box > div:nth-child(-n + 5){
+    .box>div:nth-child(-n + 5) {
         background-color: red;
         animation: slidedown;
     }
 
-    .box > div:nth-child(n + 6){
+    .box>div:nth-child(n + 6) {
         animation: slidein;
     }
 
-    .box > div:nth-child(5n + 1){
+    .box>div:nth-child(5n + 1) {
         animation-duration: 1s;
     }
 
-    .box > div:nth-child(5n + 2){
+    .box>div:nth-child(5n + 2) {
         animation-duration: 1.2s;
     }
 
-    .box > div:nth-child(5n + 3){
+    .box>div:nth-child(5n + 3) {
         animation-duration: 1.4s;
     }
 
-    .box > div:nth-child(5n + 4){
+    .box>div:nth-child(5n + 4) {
         animation-duration: 1.6s;
     }
 
-    .box > div:nth-child(5n + 5){
+    .box>div:nth-child(5n + 5) {
         animation-duration: 1.8s;
     }
 </style>
@@ -176,19 +178,19 @@
     const container = document.querySelector('.container')
     const closeBtn = document.querySelector('.close')
 
-    const tosummon = () =>{
-        videoContainer.style.display="inline"
+    const tosummon = () => {
+        videoContainer.style.display = "inline"
         video.play();
     }
 
     const gotosummon = () => {
-        videoContainer.style.display='none'
+        videoContainer.style.display = 'none'
         console.log(getComputedStyle(container).display)
-        container.style.display='grid'
+        container.style.display = 'grid'
     }
 
     const toClose = () => {
-        container.style.display='none'
+        container.style.display = 'none'
     }
 
     summon.addEventListener('click', tosummon)
