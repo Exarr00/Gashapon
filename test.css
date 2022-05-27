@@ -194,18 +194,196 @@ body {
 
 .box {
   width: 75vw;
-  height: 35vh;
+  height: 80vh;
   background-color: grey;
   place-items: center;
   grid-template-columns: repeat(5, 1fr);
-  overflow: hidden;
   display: grid;
 }
 
-.cards {
+.card {
+  height: 95%;
+  width: 95%;
+  outline: 1px solid red;
   position: relative;
-  width: 50px;
-  height: 100px;
-  background-color: white;
-  animation-timing-function: ease-in;
 }
+
+.card:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 20px;
+  background: linear-gradient(
+    -45deg,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+  background-position: top;
+  background-size: 100% 300%;
+  animation: flow 3s infinite alternate;
+}
+
+@keyframes flow {
+  0% {
+    background-position: top;
+  }
+
+  100% {
+    background-position: bottom;
+  }
+}
+
+.card:after {
+  content: "";
+  height: 95%;
+  width: 95%;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  filter: brightness(90%);
+  transform: translate(-50%, -50%);
+  background: url("./cards/Inori_1.png") no-repeat;
+  background-position: 0% 0%;
+  background-size: 100%;
+  position: absolute;
+}
+
+.attribute {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 40px;
+  width: 40px;
+  z-index: 999;
+  background: url("./cards/LIGHT.png") no-repeat;
+  background-position: 0% 0%;
+  background-size: 100%;
+}
+
+.rating {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+}
+
+.star {
+  height: 30px;
+  width: 30px;
+  z-index: 999;
+  background: url("star.png");
+  background-position: center;
+  background-size: 100%;
+}
+
+.name {
+  position: absolute;
+  width: 95%;
+  height: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 6px;
+  z-index: 999;
+  border-radius: 0 0 20px 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+} */
+
+/* card css basis */
+
+/* .card {
+  height: 300px;
+  width: 250px;
+  position: relative;
+}
+
+.card:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 20px;
+  background: linear-gradient(
+    -45deg,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+  background-position: top;
+  background-size: 100% 300%;
+  animation: flow 3s infinite alternate;
+}
+
+@keyframes flow {
+  0% {
+    background-position: top;
+  }
+
+  100% {
+    background-position: bottom;
+  }
+}
+
+.card:after {
+  content: "";
+  height: 95%;
+  width: 95%;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  filter: brightness(90%);
+  transform: translate(-50%, -50%);
+  background: url("./cards/Inori_1.png") no-repeat;
+  background-position: 0% 0%;
+  background-size: 100%;
+  position: absolute;
+}
+
+.attribute {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 40px;
+  width: 40px;
+  z-index: 999;
+  background: url("./cards/LIGHT.png") no-repeat;
+  background-position: 0% 0%;
+  background-size: 100%;
+}
+
+.rating {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+}
+
+.star {
+  height: 30px;
+  width: 30px;
+  z-index: 999;
+  background: url("star.png");
+  background-position: center;
+  background-size: 100%;
+}
+
+.name {
+  position: absolute;
+  width: 95%;
+  height: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 6px;
+  z-index: 999;
+  border-radius: 0 0 20px 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+} */
