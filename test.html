@@ -22,17 +22,26 @@
         </div>
     </div>
     <dialog class="modal" id="modal">
-        <h2>Purchase Gems</h2>
+        <h2 style="text-align: center; margin-bottom: 1rem;">Purchase Gems</h2>
         <div class="purchase_selection">
             <button
                 style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
-                id="qwer" value="100">ADD 100</button>
+                class="qwer" value="100">ADD 100</button>
             <button
                 style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
-                id="qwer" value="340">ADD 340</button>
+                class="qwer" value="550">ADD 500 + 50</button>
             <button
                 style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
-                id="qwer" value="1340">ADD 1340</button>
+                class="qwer" value="1300">ADD 1000 + 300</button>
+            <button
+                style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+                class="qwer" value="2900">ADD 2500 + 400</button>
+            <button
+                style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+                class="qwer" value="6000">ADD 5000 + 1000</button>
+            <button
+                style=" border: 2px solid black; height: 30px; width: 100px; letter-spacing: 2px; font-weight: bold;"
+                class="qwer" value="11800">ADD 10000 + 1800</button>
         </div>
         <button class="button close-button">close modal</button>
 
@@ -40,6 +49,24 @@
     </dialog>
     <div class="summon_banner">
         <img src="./banner.png" alt="banner">
+    </div>
+    <div class="video-container">
+        <video src="./cards/5starwish-single.mp4" muted></video>
+    </div>
+    <div class="container">
+        <button class="close">close</button>
+        <div class="box">
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+            <div class="cards"></div>
+        </div>
     </div>
     <div class="summon_btns">
         <button id="single" value="100" id="asdf" disabled>SINGLE
@@ -61,6 +88,33 @@
     closeModal.addEventListener("click", () => {
         modal.close();
     });
+
+    /*andy's script */
+    const summon = document.querySelector('#multi')
+    const videoContainer = document.querySelector('.video-container')
+    const video = document.querySelector('video')
+    const container = document.querySelector('.container')
+    const closeBtn = document.querySelector('.close')
+
+    const tosummon = () => {
+        videoContainer.style.display = "inline"
+        video.play();
+    }
+
+    const gotosummon = () => {
+        videoContainer.style.display = 'none'
+        console.log(getComputedStyle(container).display)
+        container.style.display = 'grid'
+    }
+
+    const toClose = () => {
+        container.style.display = 'none'
+    }
+
+    summon.addEventListener('click', tosummon)
+    video.addEventListener('ended', gotosummon)
+    closeBtn.addEventListener('click', toClose)
+
 </script>
 
 </html>
