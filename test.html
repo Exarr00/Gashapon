@@ -11,6 +11,7 @@
 
 <body style="background-color: gray;">
     <div class="header_bar">
+        <button class="modal_btns history-open">HISTORY</button>
         <div class="right_align_section">
             <div class="gem_amount">
                 Current Gem Count: <span id="GEM_AMT"></span>
@@ -47,6 +48,10 @@
 
 
     </dialog>
+    <dialog class="modal" id="historyModal">
+        <button class="modalClose history-close">close</button>
+        <div class="history-list" id="history-list"></div>
+    </dialog>
     <div class="summon_banner">
         <img src="./banner.png" alt="banner">
     </div>
@@ -56,16 +61,116 @@
     <div class="container">
         <button class="close">close</button>
         <div class="box">
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
-            <div class="cards"></div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
+            <div class="card">
+                <div class="attribute"></div>
+                <div class="rating">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="name">Inori Yuzuriha</div>
+            </div>
         </div>
     </div>
     <div class="summon_btns">
@@ -79,8 +184,19 @@
 <script type="module" src="index.js"></script>
 <script>
     const modal = document.querySelector("#modal");
+    const historyModal = document.querySelector("#historyModal");
+    const historyOpen = document.querySelector('.history-open');
+    const historyClose = document.querySelector('.history-close');
     const openModal = document.querySelector(".open-button");
     const closeModal = document.querySelector(".close-button");
+
+    historyOpen.addEventListener("click", () => {
+        historyModal.showModal();
+    })
+
+    historyClose.addEventListener("click", () => {
+        historyModal.close();
+    })
 
     openModal.addEventListener("click", () => {
         modal.showModal();

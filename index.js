@@ -14,6 +14,16 @@ let GEM_COUNT = localStorage.getItem('GEMS_AMT');
 //set user's gem data to element
 document.getElementById('GEM_AMT').textContent = GEM_COUNT;
 
+let historyList = document.getElementById("history-list");
+
+const updateList = (summons) => {
+  summons.forEach((summon) => {
+    let item = document.createElement("div");
+    item.textContent = summon.name;
+    historyList.appendChild(item);
+  });
+};
+
 services().then((data) => {
     gacha.setGacha(data);
     singleSummon.disabled = false;
@@ -50,16 +60,19 @@ singleSummon.addEventListener('click', (e) => {
 });
 
 //multi summon
+
 multiSummon.addEventListener('click', (e) => {
     GEM_COUNT = localStorage.getItem('GEMS_AMT');
     if (gems.useGems(GEM_COUNT, e)) {
         const result = gacha.multiRoll();
         history.updateHistory(...result);
         console.log(result);
+        updateList(summons);
         whaleWatchers();
     } else {
         window.alert('not enough gems');
     }
+
 });
 
 const incrementBtns = document.querySelectorAll('.qwer');
