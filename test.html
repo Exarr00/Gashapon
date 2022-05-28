@@ -73,6 +73,7 @@
             SUMMON</button>
         <button id="multi" id="asdf" value="1000" disabled>MULTI
             SUMMON</button>
+        <button id="history" id="asdf" value="1000" disabled>Get History</button>
     </div>
 </body>
 <script type="module" src="index.js"></script>
@@ -90,29 +91,29 @@
     });
 
     /*andy's script */
-    const summon = document.querySelector('#multi')
-    const videoContainer = document.querySelector('.video-container')
-    const video = document.querySelector('video')
-    const container = document.querySelector('.container')
-    const closeBtn = document.querySelector('.close')
+    const summon = document.querySelector('#multi');
+    const videoContainer = document.querySelector('.video-container');
+    const video = document.querySelector('video');
+    const container = document.querySelector('.container');
+    const closeBtn = document.querySelector('.close');
 
     const tosummon = () => {
-        videoContainer.style.display = "inline"
+        videoContainer.style.display = "inline";
         video.play();
-    }
+    };
 
     const gotosummon = () => {
-        videoContainer.style.display = 'none'
-        console.log(getComputedStyle(container).display)
-        container.style.display = 'grid'
-    }
+        videoContainer.style.display = 'none';
+        console.log(getComputedStyle(container).display);
+        container.style.display = 'grid';
+    };
 
     const toClose = () => {
-        container.style.display = 'none'
-    }
+        container.style.display = 'none';
+    };
 
-    summon.addEventListener('click', tosummon)
-    video.addEventListener('ended', gotosummon)
+    summon.addEventListener('click', tosummon);
+    video.addEventListener('ended', gotosummon);
     closeBtn.addEventListener('click', toClose)
 
 </script>
