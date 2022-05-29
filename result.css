@@ -1,0 +1,204 @@
+.container img {
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05), 0px 6px 6px rgba(0, 0, 0, 0.1),
+        0px 8px 8px rgba(0, 0, 0, 0.05), 0px 10px 15px rgba(0, 0, 0, 0.03),
+        0px 30px 30px rgba(0, 0, 0, 0.15), 0px 70px 60px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+    position: absolute;
+    background: url(./clouds.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    place-content: center;
+    z-index: 1000;
+}
+
+.box {
+    --bradius: 20px
+}
+
+.box {
+    width: 80vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: grey;
+    place-items: start center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px 0;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+}
+
+.card {
+    padding-top: 100%;
+    width: 90%;
+    position: relative;
+}
+
+.card:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--bradius);
+    animation: flow 3s infinite alternate;
+}
+
+.card.gold::before {
+    background: linear-gradient(-45deg,
+            #bf953f,
+            #fcf6ba,
+            #b38728,
+            #fbf5b7,
+            #aa771c);
+    background-position: top;
+    background-size: 100% 300%;
+}
+
+.card.silver::before {
+    background: linear-gradient(0deg,
+            #a1a1a1,
+            #dedede,
+            #ffffff,
+            #a1a1a1,
+            #ffffff,
+            #dedede,
+            #a1a1a1);
+    background-position: top;
+    background-size: 100% 300%;
+}
+
+.card.bronze::before {
+    background: linear-gradient(0deg, #000000, #c28e0e, #98700d, #000000);
+    background-position: top;
+    background-size: 100% 300%;
+}
+
+@keyframes flow {
+    0% {
+        background-position: top;
+    }
+
+    100% {
+        background-position: bottom;
+    }
+}
+
+.card img {
+    content: "";
+    height: 95%;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+    border-radius: var(--bradius);
+    filter: brightness(90%);
+    transform: translate(-50%, -50%);
+    object-position: 50% 10%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.attribute {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 20%;
+    width: 20%;
+    z-index: 999;
+    background: url("./cards/LIGHT.png") no-repeat;
+    background-position: 0% 0%;
+    background-size: 100%;
+}
+
+.rating {
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+}
+
+.star {
+    height: 30px;
+    width: 30px;
+    z-index: 999;
+    background: url("star.png");
+    background-position: center;
+    background-size: 100%;
+}
+
+.name {
+    position: absolute;
+    width: 95%;
+    height: 10%;
+    left: 50%;
+    font-size: 10px;
+    transform: translate(-50%);
+    bottom: 2.4%;
+    z-index: 999;
+    border-radius: 0 0 var(--bradius) var(--bradius);
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.box>div:nth-child(-n + 5) {
+    animation: slidedown;
+    animation-timing-function: ease-out;
+}
+
+.box>div:nth-child(n + 6) {
+    animation: slidein;
+    animation-timing-function: ease-out;
+}
+
+.box>div:nth-child(5n + 1) {
+    animation-duration: 1s;
+}
+
+.box>div:nth-child(5n + 2) {
+    animation-duration: 1.2s;
+}
+
+.box>div:nth-child(5n + 3) {
+    animation-duration: 1.4s;
+}
+
+.box>div:nth-child(5n + 4) {
+    animation-duration: 1.6s;
+}
+
+.box>div:nth-child(5n + 5) {
+    animation-duration: 1.8s;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slidedown {
+    from {
+        transform: translateY(-1000px)
+    }
+
+    to {
+        transform: translateY(0px)
+    }
+}
