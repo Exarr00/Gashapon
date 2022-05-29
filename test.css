@@ -292,7 +292,7 @@ body {
   background-color: black;
   color: white;
   text-align: center;
-} */
+} 
 
 /* card css basis */
 
@@ -387,3 +387,9 @@ body {
   color: white;
   text-align: center;
 } */
+
+.video-container #skip {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
