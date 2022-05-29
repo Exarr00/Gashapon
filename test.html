@@ -11,7 +11,7 @@
 
 <body style="background-color: gray;">
     <div class="header_bar">
-        <button class="modal_btns history-open">HISTORY</button>
+        <button class="modal_btns history-open" id="history-open">HISTORY</button>
         <div class="right_align_section">
             <div class="gem_amount">
                 Current Gem Count: <span id="GEM_AMT"></span>
@@ -50,7 +50,32 @@
     </dialog>
     <dialog class="modal" id="historyModal">
         <button class="modalClose history-close">close</button>
-        <div class="history-list" id="history-list"></div>
+        <div class="history-list" id="history-list">
+            <table>
+                <tbody id="history-table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-numbers" id="page-numbers">
+            <button class="btn-pagination" id="previous-btn" value="previous">
+                <svg width="253" height="332" viewBox="0 0 253 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M127.5 5L7 165L127.5 327M247.5 5L127 165L247.5 327M187.5 5L67 165L187.5 327"
+                        stroke="black" stroke-width="10" stroke-linecap="round" />
+                </svg>
+
+            </button>
+            <div id="current-number">1</div>
+            <button class="btn-pagination" id="next-btn" value="next">
+                <svg width="252" height="332" viewBox="0 0 252 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" d="M125 327L245.5 167L125 5M5 327L125.5 167L5 5M65 327L185.5 167L65 5"
+                        stroke="black" stroke-width="10" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
     </dialog>
     <div class="summon_banner">
         <img src="./banner.png" alt="banner">
@@ -178,7 +203,6 @@
             SUMMON</button>
         <button id="multi" id="asdf" value="1000" disabled>MULTI
             SUMMON</button>
-        <button id="history" id="asdf" value="1000" disabled>Get History</button>
     </div>
 </body>
 <script type="module" src="index.js"></script>
@@ -231,6 +255,10 @@
     summon.addEventListener('click', tosummon);
     video.addEventListener('ended', gotosummon);
     closeBtn.addEventListener('click', toClose)
+
+    const clicktest = () => {
+        console.log('clicked')
+    }
 
 </script>
 
