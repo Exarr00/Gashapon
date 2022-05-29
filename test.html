@@ -57,6 +57,7 @@
     </div>
     <div class="video-container">
         <video src="./cards/5starwish-single.mp4" muted></video>
+        <button id="skip">Skip</button>
     </div>
     <div class="container">
         <button class="close">close</button>
@@ -192,11 +193,11 @@
 
     historyOpen.addEventListener("click", () => {
         historyModal.showModal();
-    })
+    });
 
     historyClose.addEventListener("click", () => {
         historyModal.close();
-    })
+    });
 
     openModal.addEventListener("click", () => {
         modal.showModal();
@@ -212,6 +213,7 @@
     const video = document.querySelector('video');
     const container = document.querySelector('.container');
     const closeBtn = document.querySelector('.close');
+    const skipBtn = document.querySelector('#skip');
 
     const tosummon = () => {
         videoContainer.style.display = "inline";
@@ -228,9 +230,14 @@
         container.style.display = 'none';
     };
 
+    const toSkip = () => {
+        video.currentTime = video.duration;
+    };
+
     summon.addEventListener('click', tosummon);
     video.addEventListener('ended', gotosummon);
-    closeBtn.addEventListener('click', toClose)
+    closeBtn.addEventListener('click', toClose);
+    skipBtn.addEventListener('click', toSkip);
 
 </script>
 
