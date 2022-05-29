@@ -332,7 +332,8 @@ body {
 .page-numbers #current-number {
   text-align: center;
   font-size: 20px;
-}
+} 
+
 
 /* card css basis */
 
@@ -427,3 +428,9 @@ body {
   color: white;
   text-align: center;
 } */
+
+.video-container #skip {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
