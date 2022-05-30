@@ -79,7 +79,7 @@ const getResult = (rarity) => {
 
 const getUnits = (rarity) => {
   const unitArr = gacha.filter((unit) => unit.rating === rarity);
-  return unitArr;
+  return shuffle(unitArr);
 };
 
 const coinToss = () => {

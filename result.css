@@ -130,7 +130,7 @@
     height: 30px;
     width: 30px;
     z-index: 999;
-    background: url("star.png");
+    background: url("./cards/Star.png");
     background-position: center;
     background-size: 100%;
 }
