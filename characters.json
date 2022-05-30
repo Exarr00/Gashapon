@@ -119,7 +119,7 @@
     "id": 17
   },
     {
-    "name": "Forger Family (Loid, Yor, Anya)",
+    "name": "Forger Family",
     "attribute": "Dark",
     "rating": 3,
     "featured": false,
@@ -161,7 +161,7 @@
     "id": 23
   },
     {
-    "name": "Origami Tobiichi",
+    "name": "Origami Tobiichi(Angel)",
     "attribute": "Divine",
     "rating": 3,
     "featured": false,
@@ -245,7 +245,7 @@
     "id": 35
   },
     {
-    "name": "Yami (In the Toilet)",
+    "name": "Yami (Toilet)",
     "attribute": "Dark",
     "rating": 3,
     "featured": false,
@@ -280,7 +280,7 @@
     "id": 40
   },
     {
-    "name": "Sui/Souta",
+    "name": "Sui-Souta",
     "attribute": "Water",
     "rating": 3,
     "featured": false,
@@ -322,7 +322,7 @@
     "id": 46
   },
     {
-    "name": "Mob 0%",
+    "name": "Mob 0 Percent",
     "attribute": "Divine",
     "rating": 3,
     "featured": false,
