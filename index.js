@@ -58,6 +58,7 @@ multiSummon.addEventListener("click", (e) => {
   if (gems.useGems(GEM_COUNT, e)) {
     const result = gacha.multiRoll();
     history.updateHistory(...result);
+    showResult(...result);
     console.log(result);
     whaleWatchers();
   } else {
@@ -124,3 +125,46 @@ pageBtns.forEach((btn) => {
     }
   });
 });
+
+/////////////////////////////////////
+const box = document.querySelector('.box')
+
+const showResult = (...result) => {
+  box.replaceChildren();
+  result.forEach(element => {
+    let outercard = document.createElement('div')
+    let attribute = document.createElement('div')
+    let rating = document.createElement('div')
+    let name = document.createElement('div')
+    let cardImg = document.createElement('img')
+    cardImg.src = `./cards/${element.name.split(' ').join('_')}.png`
+    const color = getRateColor(element.rating)
+    outercard.classList.add('card', color)
+    attribute.classList.add('attribute')
+    attribute.style.background = `url(./cards/${element.attribute.toUpperCase()}.png) 0% 0% / 100% no-repeat`
+    rating.classList.add('rating')
+    let charRating = element.rating
+    while(charRating > 0){
+      let star = document.createElement('div')
+      star.classList.add('star')
+      rating.appendChild(star)
+      charRating--
+    }
+    name.classList.add('name')
+    name.textContent = element.name;
+    outercard.append(attribute, cardImg, rating, name)
+    box.append(outercard)
+  })
+}
+
+const getRateColor = (rate) => {
+  switch(rate){
+    case 3: 
+      return 'bronze'
+    case 4: 
+      return 'silver'
+    case 5: 
+      return 'gold'
+  }
+}
+
