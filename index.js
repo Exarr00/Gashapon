@@ -185,68 +185,44 @@ closeBtn.addEventListener("click", toClose);
 skipBtn.addEventListener("click", toSkip);
 
 //post summon screen
-
-const currentSummoned = (results) => {
-  let ratingArr = ["x", "x", "x", "bronze", "silver", "gold"];
-  results.forEach((result) => {
-    let card = document.createElement("div");
-    let img = document.createElement("img");
-    let attributeElement = document.createElement("div");
-    let ratingElement = document.createElement("div");
-    let nameElement = document.createElement("div");
-    card.setAttribute("class", "card " + ratingArr[result.rating]);
-    img.setAttribute("src", "./cards/Inori_1.png");
-    card.appendChild(img);
-    attributeElement.setAttribute("class", "attribute");
-    ratingElement.setAttribute("class", "rating");
-    nameElement.setAttribute("class", "name");
-    nameElement.textContent = result.name;
-    card.appendChild(img);
-    card.appendChild(attributeElement);
-    card.appendChild(ratingElement);
-    card.appendChild(nameElement);
-    document.getElementById("cards-summoned").appendChild(card);
-  });
-};
 /////////////////////////////////////
-const box = document.querySelector('.box')
+const box = document.querySelector(".box");
 
 const showResult = (...result) => {
   box.replaceChildren();
-  result.forEach(element => {
-    let outercard = document.createElement('div')
-    let attribute = document.createElement('div')
-    let rating = document.createElement('div')
-    let name = document.createElement('div')
-    let cardImg = document.createElement('img')
-    cardImg.src = `./cards/${element.name.split(' ').join('_')}.png`
-    const color = getRateColor(element.rating)
-    outercard.classList.add('card', color)
-    attribute.classList.add('attribute')
-    attribute.style.background = `url(./cards/${element.attribute.toUpperCase()}.png) 0% 0% / 100% no-repeat`
-    rating.classList.add('rating')
-    let charRating = element.rating
-    while(charRating > 0){
-      let star = document.createElement('div')
-      star.classList.add('star')
-      rating.appendChild(star)
-      charRating--
+  result.forEach((element) => {
+    let outercard = document.createElement("div");
+    let attribute = document.createElement("div");
+    let rating = document.createElement("div");
+    let name = document.createElement("div");
+    let cardImg = document.createElement("img");
+    cardImg.src = `./cards/${element.name.split(" ").join("_")}.png`;
+    const color = getRateColor(element.rating);
+    outercard.classList.add("card", color);
+    attribute.classList.add("attribute");
+    attribute.style.background = `url(./cards/${element.attribute.toUpperCase()}.png) 0% 0% / 100% no-repeat`;
+    rating.classList.add("rating");
+    let charRating = element.rating;
+    while (charRating > 0) {
+      let star = document.createElement("div");
+      star.classList.add("star");
+      rating.appendChild(star);
+      charRating--;
     }
-    name.classList.add('name')
+    name.classList.add("name");
     name.textContent = element.name;
-    outercard.append(attribute, cardImg, rating, name)
-    box.append(outercard)
-  })
-}
+    outercard.append(attribute, cardImg, rating, name);
+    box.append(outercard);
+  });
+};
 
 const getRateColor = (rate) => {
-  switch(rate){
-    case 3: 
-      return 'bronze'
-    case 4: 
-      return 'silver'
-    case 5: 
-      return 'gold'
+  switch (rate) {
+    case 3:
+      return "bronze";
+    case 4:
+      return "silver";
+    case 5:
+      return "gold";
   }
-}
-
+};
