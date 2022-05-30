@@ -185,11 +185,34 @@ closeBtn.addEventListener("click", toClose);
 skipBtn.addEventListener("click", toSkip);
 
 //post summon screen
+
+const currentSummoned = (results) => {
+  results.forEach((result) => {
+    let card = document.createElement("div");
+    let img = document.createElement("img");
+    let attributeElement = document.createElement("div");
+    let ratingElement = document.createElement("div");
+    let nameElement = document.createElement("div");
+    card.setAttribute("class", "card " + ratingArr[result.rating]);
+    img.setAttribute("src", "./cards/Inori_1.png");
+    card.appendChild(img);
+    attributeElement.setAttribute("class", "attribute");
+    ratingElement.setAttribute("class", "rating");
+    nameElement.setAttribute("class", "name");
+    nameElement.textContent = result.name;
+    card.appendChild(img);
+    card.appendChild(attributeElement);
+    card.appendChild(ratingElement);
+    card.appendChild(nameElement);
+    document.getElementById("cards-summoned").appendChild(card);
+  });
+};
 /////////////////////////////////////
 const box = document.querySelector(".box");
 
 const showResult = (...result) => {
   box.replaceChildren();
+  let ratingArr = ["x", "x", "x", "bronze", "silver", "gold"];
   result.forEach((element) => {
     let outercard = document.createElement("div");
     let attribute = document.createElement("div");
@@ -197,7 +220,7 @@ const showResult = (...result) => {
     let name = document.createElement("div");
     let cardImg = document.createElement("img");
     cardImg.src = `./cards/${element.name.split(" ").join("_")}.png`;
-    const color = getRateColor(element.rating);
+    const color = ratingArr[element.rating];
     outercard.classList.add("card", color);
     attribute.classList.add("attribute");
     attribute.style.background = `url(./cards/${element.attribute.toUpperCase()}.png) 0% 0% / 100% no-repeat`;
@@ -214,15 +237,4 @@ const showResult = (...result) => {
     outercard.append(attribute, cardImg, rating, name);
     box.append(outercard);
   });
-};
-
-const getRateColor = (rate) => {
-  switch (rate) {
-    case 3:
-      return "bronze";
-    case 4:
-      return "silver";
-    case 5:
-      return "gold";
-  }
 };
