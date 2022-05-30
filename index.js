@@ -185,28 +185,6 @@ closeBtn.addEventListener("click", toClose);
 skipBtn.addEventListener("click", toSkip);
 
 //post summon screen
-
-const currentSummoned = (results) => {
-  results.forEach((result) => {
-    let card = document.createElement("div");
-    let img = document.createElement("img");
-    let attributeElement = document.createElement("div");
-    let ratingElement = document.createElement("div");
-    let nameElement = document.createElement("div");
-    card.setAttribute("class", "card " + ratingArr[result.rating]);
-    img.setAttribute("src", "./cards/Inori_1.png");
-    card.appendChild(img);
-    attributeElement.setAttribute("class", "attribute");
-    ratingElement.setAttribute("class", "rating");
-    nameElement.setAttribute("class", "name");
-    nameElement.textContent = result.name;
-    card.appendChild(img);
-    card.appendChild(attributeElement);
-    card.appendChild(ratingElement);
-    card.appendChild(nameElement);
-    document.getElementById("cards-summoned").appendChild(card);
-  });
-};
 /////////////////////////////////////
 const box = document.querySelector(".box");
 
