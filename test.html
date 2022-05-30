@@ -57,6 +57,7 @@
                     <tr>
                         <th>Name</th>
                         <th>Date</th>
+                        <th>Rating</th>
                     </tr>
                 </tbody>
             </table>
@@ -87,127 +88,7 @@
     </div>
     <div class="container">
         <button class="close">close</button>
-        <div class="box">
-            <div class="card gold">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card silver">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card bronze">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card bronze">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card bronze">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card bronze">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card bronze">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card bronze">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card bronze">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
-            <div class="card bronze">
-                <img src="./cards/Inori_1.png" alt="">
-                <div class="attribute"></div>
-                <div class="rating">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                </div>
-                <div class="name">Inori Yuzuriha</div>
-            </div>
+        <div class="box" id="cards-summoned">
         </div>
     </div>
     <div class="summon_btns">
@@ -219,64 +100,6 @@
 </body>
 <script type="module" src="index.js"></script>
 <script>
-    const modal = document.querySelector("#modal");
-    const historyModal = document.querySelector("#historyModal");
-    const historyOpen = document.querySelector('.history-open');
-    const historyClose = document.querySelector('.history-close');
-    const openModal = document.querySelector(".open-button");
-    const closeModal = document.querySelector(".close-button");
-
-    historyOpen.addEventListener("click", () => {
-        historyModal.showModal();
-    });
-
-    historyClose.addEventListener("click", () => {
-        historyModal.close();
-    });
-
-    openModal.addEventListener("click", () => {
-        modal.showModal();
-    });
-
-    closeModal.addEventListener("click", () => {
-        modal.close();
-    });
-
-    /*andy's script */
-    const summon = document.querySelector('#multi');
-    const videoContainer = document.querySelector('.video-container');
-    const video = document.querySelector('video');
-    const container = document.querySelector('.container');
-    const closeBtn = document.querySelector('.close');
-    const skipBtn = document.querySelector('#skip');
-
-    const tosummon = () => {
-        videoContainer.style.display = "inline";
-        video.play();
-    };
-
-    const gotosummon = () => {
-        videoContainer.style.display = 'none';
-        console.log(getComputedStyle(container).display);
-        container.style.display = 'grid';
-    };
-
-    const toClose = () => {
-        container.style.display = 'none';
-    };
-
-    const toSkip = () => {
-        video.currentTime = video.duration;
-    };
-
-    summon.addEventListener('click', tosummon);
-    video.addEventListener('ended', gotosummon);
-    closeBtn.addEventListener('click', toClose);
-    skipBtn.addEventListener('click', toSkip);
-
-    const clicktest = () => {
-        console.log('clicked')
-    }
 
 </script>
 
