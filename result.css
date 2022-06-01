@@ -125,9 +125,8 @@
 
 .rating {
   display: flex;
-  position: absolute;
-  bottom: 30px;
-  right: 10px;
+  position: relative;
+  justify-content: center;
 }
 
 .star {
@@ -140,7 +139,7 @@
 }
 
 .name {
-  position: absolute;
+  position: relative;
   width: 95%;
   height: 10%;
   left: 50%;
