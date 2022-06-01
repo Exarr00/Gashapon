@@ -44,8 +44,9 @@ singleSummon.addEventListener("click", (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
     const result = gacha.roll();
-    history.updateHistory(result);
+    history.updateHistory(...result);
     tosummon();
+    showResult(...result);
     whaleWatchers();
   } else {
     window.alert("not enough gems");
@@ -58,11 +59,10 @@ multiSummon.addEventListener("click", (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
     const result = gacha.multiRoll();
+    history.updateHistory(...result);
     tosummon();
     showResult(...result);
-    console.log(result);
     whaleWatchers();
-    currentSummoned(result);
   } else {
     window.alert("not enough gems");
   }
@@ -139,6 +139,8 @@ const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 
 historyOpen.addEventListener("click", () => {
+  console.log(history.getHistory());
+  changePage();
   historyModal.showModal();
 });
 
@@ -192,6 +194,7 @@ const showResult = (...result) => {
   box.replaceChildren();
   let ratingArr = ["x", "x", "x", "bronze", "silver", "gold"];
   result.forEach((element) => {
+    console.log(element);
     let outercard = document.createElement("div");
     let attribute = document.createElement("div");
     let rating = document.createElement("div");

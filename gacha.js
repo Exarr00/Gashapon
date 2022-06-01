@@ -46,17 +46,23 @@ const shuffle = (array) => {
 const roll = () => {
   fourStarCounter++;
   fiveStarCounter++;
+  const singleResult = [];
   if (fourStarCounter === 10) {
-    return getResult(4);
+    singleResult.push(getResult(4));
   } else if (fiveStarCounter === 100 || fiveStarCounter === 135) {
-    return getResult(5);
+    singleResult.push(getResult(5));
   } else {
     if (!onSoft) {
-      return getResult(baseProbability[getRandNum(baseProbability.length)]);
+      singleResult.push(
+        getResult(baseProbability[getRandNum(baseProbability.length)])
+      );
     } else {
-      return getResult(pityProbability[getRandNum(pityProbability.length)]);
+      singleResult.push(
+        getResult(pityProbability[getRandNum(pityProbability.length)])
+      );
     }
   }
+  return singleResult;
 };
 
 const multiRoll = () => {
