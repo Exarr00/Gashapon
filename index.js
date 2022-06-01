@@ -44,9 +44,9 @@ singleSummon.addEventListener("click", (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
     const result = gacha.roll();
-    history.updateHistory(...result);
+    history.updateHistory(result);
     tosummon();
-    showResult(...result);
+    showResult(result);
     whaleWatchers();
   } else {
     window.alert("not enough gems");
@@ -191,10 +191,10 @@ skipBtn.addEventListener("click", toSkip);
 const box = document.querySelector(".box");
 
 const showResult = (...result) => {
+  let x = 0;
   box.replaceChildren();
   let ratingArr = ["x", "x", "x", "bronze", "silver", "gold"];
   result.forEach((element) => {
-    console.log(element);
     let outercard = document.createElement("div");
     let attribute = document.createElement("div");
     let rating = document.createElement("div");
