@@ -133,8 +133,8 @@ body {
 }
 
 .modal {
-  height: 400px;
-  width: 500px;
+  max-height: 500px;
+  width: 90vw;
   position: relative;
 }
 
@@ -143,7 +143,16 @@ body {
 }
 
 .purchase_seleection {
-  display: block;
+  display: flex;
+}
+
+.purchase_selection .qwer {
+  margin: 1rem 1rem;
+  border: 2px solid black;
+  height: 30px;
+  width: fit-content;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .close-button {
@@ -173,19 +182,30 @@ body {
 }
 
 .history-list {
-  height: 83%;
+  height: fit-content;
+  margin-top: 3%;
 }
 
-.history-list div {
-  margin-top: 0.25rem;
+.history-list table {
+  width: 100%;
+  height: 100%;
+}
+
+#history-table tr {
+  outline: 1px solid black;
+}
+
+#history-table tr * {
+  text-align: center;
+  padding: 5px 0;
 }
 
 .page-numbers {
-  position: absolute;
-  bottom: 1rem;
   display: flex;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin-top: 0.25rem;
+  top: 0.1rem;
+  justify-content: center;
 }
 
 .page-numbers * {
