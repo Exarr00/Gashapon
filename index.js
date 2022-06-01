@@ -139,7 +139,6 @@ const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 
 historyOpen.addEventListener("click", () => {
-  console.log(history.getHistory());
   changePage();
   historyModal.showModal();
 });
