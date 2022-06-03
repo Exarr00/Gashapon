@@ -87,8 +87,8 @@ body {
 button:hover,
 button:focus {
   border-color: darkblue;
-  box-shadow: inset -10em 0 0 0 rgb(77, 131, 247),
-    inset 10em 0 0 0 rgb(77, 131, 247);
+  box-shadow: inset -50em 0 0 0 rgb(77, 131, 247),
+    inset 50em 0 0 0 rgb(77, 131, 247);
   color: white;
 }
 
@@ -185,7 +185,6 @@ button {
 }
 
 /* andy's css */
-
 .video-container {
   display: none;
   position: absolute;
@@ -262,5 +261,3 @@ button {
   top: 0;
   right: 0;
 }
-
-/* CSS */
