@@ -180,6 +180,7 @@ button {
 
 .close-button {
   position: relative;
+  display: flex;
   margin-left: auto;
 }
 
