@@ -26,14 +26,21 @@ services().then((data) => {
 //check if user has reached >10k gems
 const whaleWatchers = () => {
   let gems = localStorage.getItem("GEMS_AMT");
-  let icon = document.getElementById("whale_icon");
-  if (gems >= 10000) {
-    if (icon.hasAttribute("hidden")) {
-      icon.removeAttribute("hidden");
-    }
-    return;
+  let icon = document.getElementsByClassName("status_level");
+  console.log(icon);
+  if (gems >= 3000) {
+    document.getElementById("dolphin").setAttribute("hidden", true);
+    document.getElementById("goldfish").removeAttribute("hidden");
   }
-  document.getElementById("whale_icon").setAttribute("hidden", true);
+  if (gems >= 8000) {
+    document.getElementById("goldfish").setAttribute("hidden", true);
+    document.getElementById("whale").setAttribute("hidden", true);
+    document.getElementById("dolphin").removeAttribute("hidden");
+  }
+  if (gems >= 10000) {
+    document.getElementById("dolphin").setAttribute("hidden", true);
+    document.getElementById("whale").removeAttribute("hidden");
+  }
 };
 
 //initial page load check
