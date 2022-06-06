@@ -199,11 +199,11 @@ const showResult = (...result) => {
     let rating = document.createElement("div");
     let name = document.createElement("div");
     let cardImg = document.createElement("img");
-    cardImg.src = `./cards/${element.name.split(" ").join("_")}.png`;
+    cardImg.src = `./imgs/cards/${element.name.split(" ").join("_")}.png`;
     const color = ratingArr[element.rating];
     outercard.classList.add("card", color);
     attribute.classList.add("attribute");
-    attribute.style.background = `url(./cards/${element.attribute.toUpperCase()}.png) 0% 0% / 100% no-repeat`;
+    attribute.style.background = `url(./imgs/elements/${element.attribute.toUpperCase()}.png) 0% 0% / 100% no-repeat`;
     rating.classList.add("rating");
     let charRating = element.rating;
     while (charRating > 0) {
