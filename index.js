@@ -38,7 +38,6 @@ const whaleWatchers = () => {
     }
     item.removeAttribute("hidden");
   });
-  console.log(icon[currStatus]);
 };
 
 //initial page load check
