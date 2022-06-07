@@ -11,6 +11,9 @@ const testGetHistory = document.getElementById("history-open");
 
 //get user's gem data from localstorage
 let GEM_COUNT = localStorage.getItem("GEMS_AMT");
+
+//initiate purchase amount to 0
+let PURCHASE_AMOUNT = 0;
 //set user's gem data to element
 document.getElementById("GEM_AMT").textContent = GEM_COUNT;
 
@@ -25,15 +28,17 @@ services().then((data) => {
 
 //check if user has reached >10k gems
 const whaleWatchers = () => {
-  let gems = localStorage.getItem("GEMS_AMT");
-  let icon = document.getElementById("whale_icon");
-  if (gems >= 10000) {
-    if (icon.hasAttribute("hidden")) {
-      icon.removeAttribute("hidden");
+  let icon = document.querySelectorAll(".status_icon");
+  let currStatus =
+    PURCHASE_AMOUNT >= 10000 ? 2 : PURCHASE_AMOUNT >= 5000 ? 1 : 0;
+  icon.forEach((item) => {
+    if (item !== icon[currStatus]) {
+      item.setAttribute("hidden", true);
+      return;
     }
-    return;
-  }
-  document.getElementById("whale_icon").setAttribute("hidden", true);
+    item.removeAttribute("hidden");
+  });
+  console.log(icon[currStatus]);
 };
 
 //initial page load check
@@ -75,6 +80,7 @@ incrementBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"));
     gems.purchaseGems(GEM_COUNT, Number(btn.value));
+    PURCHASE_AMOUNT += Number(btn.value);
     whaleWatchers();
   });
 });

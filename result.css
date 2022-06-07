@@ -133,8 +133,8 @@
 }
 
 .star {
-  height: 30px;
-  width: 30px;
+  width: 20%;
+  aspect-ratio: 1/1;
   z-index: 999;
   background: url("./imgs/Star.png");
   background-position: center;

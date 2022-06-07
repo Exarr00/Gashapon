@@ -137,7 +137,8 @@ button {
 }
 
 .status_level {
-  width: 36px;
+  width: 50px;
+  aspect-ratio: 1 / 1;
 }
 
 .summon_banner {
