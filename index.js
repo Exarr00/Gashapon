@@ -101,12 +101,18 @@ const changePage = () => {
   }
   x.forEach((historyItem) => {
     let itemName = document.createElement("td");
+    let hiddenImage = document.createElement("img");
     let itemDate = document.createElement("td");
     let itemRating = document.createElement("td");
     let tableRow = document.createElement("tr");
     itemName.textContent = historyItem.name;
+    hiddenImage.setAttribute("class", "card-text-image");
+    hiddenImage.src = `./imgs/cards/${historyItem.name
+      .split(" ")
+      .join("_")}.png`;
     itemDate.textContent = historyItem.date.toDateString();
     itemRating.textContent = historyItem.rating;
+    itemName.append(hiddenImage);
     tableRow.appendChild(itemName);
     tableRow.appendChild(itemDate);
     tableRow.appendChild(itemRating);
