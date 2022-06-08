@@ -80,6 +80,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #052FB5;
   height: 100vh;
   width: 100vw;
 }
