@@ -180,6 +180,7 @@ const tosummon = () => {
 
 const gotosummon = () => {
   videoContainer.style.display = "none";
+  video.currentTime = 0; //mobile??
   console.log(getComputedStyle(container).display);
   container.style.display = "grid";
 };
