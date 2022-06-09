@@ -80,7 +80,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #052FB5;
+  background-color: #052fb5;
   height: 100vh;
   width: 100vw;
 }
@@ -127,10 +127,6 @@ button {
 .right_align_section .gem_amount {
   padding: 12px 0;
   color: white;
-}
-
-.right_align_section .gem_amount:hover {
-  color: black;
 }
 
 .modal_btns {
@@ -219,8 +215,8 @@ button {
   height: 100%;
 }
 
-#history-table tr {
-  outline: 1px solid black;
+#history-table tr:nth-child(odd) {
+  background-color: #e6e6e6;
 }
 
 #history-table tr * {
@@ -278,7 +274,8 @@ button {
   transform: translate(-50%, -50%);
 }
 
-td:hover .card-text-image {
+td:hover .card-text-image,
+td:active .card-text-image {
   display: initial;
 }
 
