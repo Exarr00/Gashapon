@@ -72,7 +72,7 @@ multiSummon.addEventListener("click", (e) => {
   }
 });
 
-const incrementBtns = document.querySelectorAll(".qwer");
+const incrementBtns = document.querySelectorAll(".purchase_btn");
 
 //purchasing gems function
 incrementBtns.forEach((btn) => {
