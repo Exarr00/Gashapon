@@ -283,3 +283,45 @@ td:active .card-text-image {
   background-color: #f0f0f0;
   padding: 1ch 2ch;
 }
+
+#rate_info {
+  margin: 1em auto;
+  width: fit-content;
+  color: black;
+  font-size: 2.5ch;
+  border-bottom: 1px dotted currentColor;
+  background-color: rgba(100, 110, 245, 0.404);
+  position: relative;
+  letter-spacing: 0.25ch;
+}
+
+#rate_info > .tooltip {
+  display: none;
+  position: absolute;
+  bottom: 150%;
+  left: 25%;
+  background-color: black;
+  color: #ffffff;
+  width: 50ch;
+  padding: 0em 1em;
+}
+
+#rate_info > .tooltip li {
+  list-style: none;
+}
+
+#rate_info .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+#rate_info:hover > .tooltip,
+#rate_info:active > .tooltip {
+  display: unset;
+}
