@@ -265,7 +265,62 @@ button {
 .video-container #skip {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 2vw;
+  border: none;
+  display: flex;
+  gap:5px;
+  color: black;
+  background-color: transparent;
+}
+
+#skip{
+  font-size: 2vw;
+  letter-spacing: normal;
+}
+
+#skip div span{
+  position: absolute;
+}
+
+#skip:hover{
+  border-color: none;
+  box-shadow: none;
+  color: white;
+}
+
+#skip:hover div span{
+  animation-name: skip;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes skip{
+  0%{
+    opacity: 1; transform: translateX(0px) scale(1);
+  }
+  25%{
+    opacity: 0; transform: translateX(10px) scale(0.8);
+  }
+  26%{
+    opacity: 0; transform: translateX(-10px) scale(0.8);
+  }
+  60%{
+    opacity: 1; transform: translateX(0px) scale(1);
+  }
+}
+
+#skip span:nth-child(1){
+  margin-left: 10px;
+}
+
+#skip span:nth-child(2){
+  margin-left: 5px;
+  animation-delay: 0.2s;
+}
+
+#skip span:nth-child(3){
+  animation-delay: 0.4s;
 }
 
 .card-text-image {
