@@ -80,6 +80,7 @@ incrementBtns.forEach((btn) => {
     GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"));
     gems.purchaseGems(GEM_COUNT, Number(btn.value));
     PURCHASE_AMOUNT += Number(btn.value);
+    document.getElementById("buy_number").textContent = PURCHASE_AMOUNT;
     whaleWatchers();
   });
 });

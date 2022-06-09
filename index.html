@@ -14,10 +14,6 @@
     <div class="header_bar">
         <button class="modal_btns history-open" id="history-open">HISTORY</button>
         <div class="right_align_section">
-            <div class="gem_amount">
-                Current Gem Count: <span id="GEM_AMT"></span>
-            </div>
-            <button class="modal_btns open-button">BUY GEMS</button>
             <div class="status_level">
                 <div class="status_icon" id="goldfish" hidden>
                     <img style="height: 100%;" src="goldfish.png">
@@ -29,18 +25,22 @@
                     <img style="height: 100%;" src="whale.png">
                 </div>
             </div>
-
+            <div class="gem_amount">
+                Current Gem Count: <span id="GEM_AMT"></span>
+            </div>
+            <button class="modal_btns open-button">BUY GEMS</button>
         </div>
     </div>
     <dialog class="modal" id="modal">
         <h2 style="text-align: center; margin-bottom: 1rem;">Purchase Gems</h2>
+        <div class="purchase_counter">Total Gems Bought: <span id="buy_number">0</span></div>
         <div class="purchase_selection">
             <button class="qwer" value="100">ADD 100</button>
             <button class="qwer" value="550">ADD 500 + 50</button>
             <button class="qwer" value="1300">ADD 1000 + 300</button>
             <button class="qwer" value="2900">ADD 2500 + 400</button>
             <button class="qwer" value="6000">ADD 5000 + 1000</button>
-            <button class="qwer" value="11800">ADD 10000 + 1800</button>
+            <button class="qwer" value="13200">ADD 10000 + 3200</button>
         </div>
         <button class="button close-button">close modal</button>
     </dialog>

@@ -139,6 +139,7 @@ button {
 .status_level {
   width: 50px;
   aspect-ratio: 1 / 1;
+  position: relative;
 }
 
 .summon_banner {
@@ -175,17 +176,12 @@ button {
   background: rgb(0 0 0 / 0.4);
 }
 
-.purchase_seleection {
-  display: flex;
-}
-
 .close-button {
   position: relative;
   display: flex;
   margin-left: auto;
 }
 
-/* andy's css */
 .video-container {
   display: none;
   position: absolute;
@@ -275,4 +271,9 @@ button {
 
 td:hover .card-text-image {
   display: initial;
+}
+
+.purchase_counter {
+  background-color: #f0f0f0;
+  padding: 1ch 2ch;
 }
