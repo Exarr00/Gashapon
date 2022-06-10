@@ -45,6 +45,12 @@
   position: relative;
 }
 
+.card:hover{
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+  cursor: url('./imgs/pointer.png'), pointer;
+}
+
 .card:before {
   content: "";
   height: 100%;

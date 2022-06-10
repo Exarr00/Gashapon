@@ -43,8 +43,8 @@ const whaleWatchers = () => {
 //initial page load check
 whaleWatchers();
 
-//single summon
-singleSummon.addEventListener("click", (e) => {
+
+const doSingle = (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
     const result = gacha.roll();
@@ -55,11 +55,9 @@ singleSummon.addEventListener("click", (e) => {
   } else {
     window.alert("not enough gems");
   }
-});
+}
 
-//multi summon
-
-multiSummon.addEventListener("click", (e) => {
+const doMulti = (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
     const result = gacha.multiRoll();
@@ -70,7 +68,12 @@ multiSummon.addEventListener("click", (e) => {
   } else {
     window.alert("not enough gems");
   }
-});
+}
+//single summon
+singleSummon.addEventListener("click", doSingle);
+
+//multi summon
+multiSummon.addEventListener("click", doMulti);
 
 const incrementBtns = document.querySelectorAll(".purchase_btn");
 
