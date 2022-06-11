@@ -142,9 +142,8 @@ button {
 
 .summon_banner {
   display: flex;
-  margin-top: 20vh;
-  margin-bottom: 5vh;
-  justify-content: center;
+  margin: 20vh auto 5vh auto;
+  max-width: 700px;
 }
 
 .summon_banner img {
@@ -360,11 +359,11 @@ td:active .card-text-image {
   display: none;
   position: absolute;
   bottom: 150%;
-  left: 25%;
   background-color: black;
   color: #ffffff;
   width: 50ch;
   padding: 0em 1em;
+  left: -100%;
 }
 
 #rate_info > .tooltip li {
