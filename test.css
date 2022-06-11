@@ -35,7 +35,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  cursor: url('./imgs/cursor.png'), auto;
+  cursor: url("./imgs/cursor_black.png"), auto;
 }
 
 /* A elements that don't have a class get default styles */
@@ -107,7 +107,7 @@ button {
   letter-spacing: 5px;
   margin: 0.5em;
   padding: 0.5em 0.5em;
-  cursor: url('./imgs/pointer.png'), pointer;
+  cursor: url("./imgs/pointer.png"), pointer;
 }
 
 .header_bar {
@@ -266,58 +266,62 @@ button {
   right: 2vw;
   border: none;
   display: flex;
-  gap:5px;
+  gap: 5px;
   color: black;
   background-color: transparent;
 }
 
-#skip{
+#skip {
   font-size: 2vw;
   letter-spacing: normal;
 }
 
-#skip div span{
+#skip div span {
   position: absolute;
 }
 
-#skip:hover{
+#skip:hover {
   border-color: none;
   box-shadow: none;
   color: white;
 }
 
-#skip:hover div span{
+#skip:hover div span {
   animation-name: skip;
   animation-duration: 1.4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
-@keyframes skip{
-  0%{
-    opacity: 1; transform: translateX(0px) scale(1);
+@keyframes skip {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
   }
-  25%{
-    opacity: 0; transform: translateX(10px) scale(0.8);
+  25% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.8);
   }
-  26%{
-    opacity: 0; transform: translateX(-10px) scale(0.8);
+  26% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.8);
   }
-  60%{
-    opacity: 1; transform: translateX(0px) scale(1);
+  60% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
   }
 }
 
-#skip span:nth-child(1){
+#skip span:nth-child(1) {
   margin-left: 10px;
 }
 
-#skip span:nth-child(2){
+#skip span:nth-child(2) {
   margin-left: 5px;
   animation-delay: 0.2s;
 }
 
-#skip span:nth-child(3){
+#skip span:nth-child(3) {
   animation-delay: 0.4s;
 }
 
