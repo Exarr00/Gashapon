@@ -1,25 +1,25 @@
-import services from './service.js';
-import gacha from './gacha.js';
+import services from "./service.js";
+import gacha from "./gacha.js";
 
-import gems from './gems.js';
+import gems from "./gems.js";
 
-import history from './history.js';
+import history from "./history.js";
 
-const singleSummon = document.getElementById('single');
-const multiSummon = document.getElementById('multi');
-const reSingleSummon = document.getElementById('resingle');
-const reMultiSummon = document.getElementById('remulti');
-const testGetHistory = document.getElementById('history-open');
+const singleSummon = document.getElementById("single");
+const multiSummon = document.getElementById("multi");
+const reSingleSummon = document.getElementById("resingle");
+const reMultiSummon = document.getElementById("remulti");
+const testGetHistory = document.getElementById("history-open");
 
 //get user's gem data from localstorage
-let GEM_COUNT = localStorage.getItem('GEMS_AMT');
+let GEM_COUNT = localStorage.getItem("GEMS_AMT");
 
 //initiate purchase amount to 0
 let PURCHASE_AMOUNT = 0;
 //set user's gem data to element
-document.getElementById('GEM_AMT').textContent = GEM_COUNT;
+document.getElementById("GEM_AMT").textContent = GEM_COUNT;
 
-let historyList = document.getElementById('history-table');
+let historyList = document.getElementById("history-table");
 
 services().then((data) => {
   gacha.setGacha(data);
@@ -30,15 +30,15 @@ services().then((data) => {
 
 //check if user has reached >10k gems
 const whaleWatchers = () => {
-  let icon = document.querySelectorAll('.status_icon');
+  let icon = document.querySelectorAll(".status_icon");
   let currStatus =
     PURCHASE_AMOUNT >= 10000 ? 2 : PURCHASE_AMOUNT >= 5000 ? 1 : 0;
   icon.forEach((item) => {
     if (item !== icon[currStatus]) {
-      item.setAttribute('hidden', true);
+      item.setAttribute("hidden", true);
       return;
     }
-    item.removeAttribute('hidden');
+    item.removeAttribute("hidden");
   });
 };
 
@@ -46,7 +46,7 @@ const whaleWatchers = () => {
 whaleWatchers();
 
 const doSingle = (e) => {
-  GEM_COUNT = localStorage.getItem('GEMS_AMT');
+  GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
     const result = gacha.roll();
     history.updateHistory(result);
@@ -54,12 +54,12 @@ const doSingle = (e) => {
     showResult(result);
     whaleWatchers();
   } else {
-    window.alert('not enough gems');
+    window.alert("not enough gems");
   }
 };
 
 const doMulti = (e) => {
-  GEM_COUNT = localStorage.getItem('GEMS_AMT');
+  GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
     const result = gacha.multiRoll();
     history.updateHistory(...result);
@@ -67,34 +67,34 @@ const doMulti = (e) => {
     showResult(...result);
     whaleWatchers();
   } else {
-    window.alert('not enough gems');
+    window.alert("not enough gems");
   }
 };
 //single summon
-singleSummon.addEventListener('click', doSingle);
-reSingleSummon.addEventListener('click', doSingle);
+singleSummon.addEventListener("click", doSingle);
+reSingleSummon.addEventListener("click", doSingle);
 //multi summon
-multiSummon.addEventListener('click', doMulti);
+multiSummon.addEventListener("click", doMulti);
 
-reMultiSummon.addEventListener('click', doMulti);
+reMultiSummon.addEventListener("click", doMulti);
 
-const incrementBtns = document.querySelectorAll('.purchase_btn');
+const incrementBtns = document.querySelectorAll(".purchase_btn");
 
 //purchasing gems function
 incrementBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    GEM_COUNT = Number(localStorage.getItem('GEMS_AMT'));
+  btn.addEventListener("click", () => {
+    GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"));
     gems.purchaseGems(GEM_COUNT, Number(btn.value));
     PURCHASE_AMOUNT += Number(btn.value);
-    document.getElementById('buy_number').textContent = PURCHASE_AMOUNT;
+    document.getElementById("buy_number").textContent = PURCHASE_AMOUNT;
     whaleWatchers();
   });
 });
 
 //////////////////////////////////////////////////////////////
 
-const pageBtns = document.querySelectorAll('.btn-pagination');
-const pageNumber = document.getElementById('current-number');
+const pageBtns = document.querySelectorAll(".btn-pagination");
+const pageNumber = document.getElementById("current-number");
 
 const changePage = () => {
   let x = history
@@ -107,16 +107,16 @@ const changePage = () => {
     historyList.removeChild(historyList.lastChild);
   }
   x.forEach((historyItem) => {
-    let itemName = document.createElement('td');
-    let hiddenImage = document.createElement('img');
-    let itemDate = document.createElement('td');
-    let itemRating = document.createElement('td');
-    let tableRow = document.createElement('tr');
+    let itemName = document.createElement("td");
+    let hiddenImage = document.createElement("img");
+    let itemDate = document.createElement("td");
+    let itemRating = document.createElement("td");
+    let tableRow = document.createElement("tr");
     itemName.textContent = historyItem.name;
-    hiddenImage.setAttribute('class', 'card-text-image');
+    hiddenImage.setAttribute("class", "card-text-image");
     hiddenImage.src = `./imgs/cards/${historyItem.name
-      .split(' ')
-      .join('_')}.png`;
+      .split(" ")
+      .join("_")}.png`;
     itemDate.textContent = historyItem.date.toDateString();
     itemRating.textContent = historyItem.rating;
     itemName.append(hiddenImage);
@@ -127,11 +127,11 @@ const changePage = () => {
   });
 };
 
-testGetHistory.addEventListener('click', () => changePage());
+testGetHistory.addEventListener("click", () => changePage());
 
 pageBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    if (btn.value === 'previous') {
+  btn.addEventListener("click", () => {
+    if (btn.value === "previous") {
       if (Number(pageNumber.textContent) > 1) {
         pageNumber.textContent = Number(pageNumber.textContent) - 1;
         changePage();
@@ -149,93 +149,95 @@ pageBtns.forEach((btn) => {
 });
 //5/29 scripts that need to be integrated and divided in own files
 
-const modal = document.querySelector('#modal');
-const historyModal = document.querySelector('#historyModal');
-const historyOpen = document.querySelector('.history-open');
-const historyClose = document.querySelector('.history-close');
-const openModal = document.querySelector('.open-button');
-const closeModal = document.querySelector('.close-button');
+const modal = document.querySelector("#modal");
+const historyModal = document.querySelector("#historyModal");
+const historyOpen = document.querySelector(".history-open");
+const historyClose = document.querySelector(".history-close");
+const openModal = document.querySelector(".open-button");
+const closeModal = document.querySelector(".close-button");
 
-historyOpen.addEventListener('click', () => {
+historyOpen.addEventListener("click", () => {
   changePage();
   historyModal.showModal();
 });
 
-historyClose.addEventListener('click', () => {
+historyClose.addEventListener("click", () => {
   historyModal.close();
 });
 
-openModal.addEventListener('click', () => {
+openModal.addEventListener("click", () => {
   modal.showModal();
 });
 
-closeModal.addEventListener('click', () => {
+closeModal.addEventListener("click", () => {
   modal.close();
 });
 
 /*andy's script */
-const videoContainer = document.querySelector('.video-container');
-const video = document.querySelector('video');
-const container = document.querySelector('.container');
-const closeBtn = document.querySelector('.close');
-const skipBtn = document.querySelector('#skip');
+const videoContainer = document.querySelector(".video-container");
+const video = document.querySelector("video");
+const container = document.querySelector(".container");
+const closeBtn = document.querySelector(".close");
+const skipBtn = document.querySelector("#skip");
 
 const tosummon = () => {
-  if (getComputedStyle(container).display !== 'none') {
-    container.style.display = 'none';
+  window.scrollTo(0, 0);
+  if (getComputedStyle(container).display !== "none") {
+    container.style.display = "none";
   }
-  console.log('got here');
-  videoContainer.style.display = 'inline';
+  videoContainer.style.display = "inline";
   video.play();
 };
 
 const gotosummon = () => {
-  videoContainer.style.display = 'none';
+  document.body.style["overflow"] = "hidden";
+  videoContainer.style.display = "none";
   video.currentTime = 0; //mobile??
   console.log(getComputedStyle(container).display);
-  container.style.display = 'grid';
+  container.style.display = "grid";
 };
 
 const toClose = () => {
-  container.style.display = 'none';
+  container.style.display = "none";
+  document.body.style["overflow"] = "auto";
 };
 
 const toSkip = () => {
   video.currentTime = video.duration;
 };
 
-video.addEventListener('ended', gotosummon);
-closeBtn.addEventListener('click', toClose);
-skipBtn.addEventListener('click', toSkip);
+video.addEventListener("ended", gotosummon);
+closeBtn.addEventListener("click", toClose);
+skipBtn.addEventListener("click", toSkip);
 
 //post summon screen
 /////////////////////////////////////
-const box = document.querySelector('.box');
+const box = document.querySelector(".box");
 
 const showResult = (...result) => {
   let x = 0;
   box.replaceChildren();
-  let ratingArr = ['x', 'x', 'x', 'bronze', 'silver', 'gold'];
+  let ratingArr = ["x", "x", "x", "bronze", "silver", "gold"];
   result.forEach((element) => {
-    let outercard = document.createElement('div');
-    let attribute = document.createElement('div');
-    let rating = document.createElement('div');
-    let name = document.createElement('div');
-    let cardImg = document.createElement('img');
-    cardImg.src = `./imgs/cards/${element.name.split(' ').join('_')}.png`;
+    let outercard = document.createElement("div");
+    let attribute = document.createElement("div");
+    let rating = document.createElement("div");
+    let name = document.createElement("div");
+    let cardImg = document.createElement("img");
+    cardImg.src = `./imgs/cards/${element.name.split(" ").join("_")}.png`;
     const color = ratingArr[element.rating];
-    outercard.classList.add('card', color);
-    attribute.classList.add('attribute');
+    outercard.classList.add("card", color);
+    attribute.classList.add("attribute");
     attribute.style.background = `url(./imgs/elements/${element.attribute.toUpperCase()}.png) 0% 0% / 100% no-repeat`;
-    rating.classList.add('rating');
+    rating.classList.add("rating");
     let charRating = element.rating;
     while (charRating > 0) {
-      let star = document.createElement('div');
-      star.classList.add('star');
+      let star = document.createElement("div");
+      star.classList.add("star");
       rating.appendChild(star);
       charRating--;
     }
-    name.classList.add('name');
+    name.classList.add("name");
     name.textContent = element.name;
     outercard.append(attribute, cardImg, rating, name);
     box.append(outercard);

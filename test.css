@@ -35,7 +35,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  cursor: url('./imgs/cursor.png'), auto;
+  cursor: url("./imgs/cursor_black.png"), auto;
 }
 
 /* A elements that don't have a class get default styles */
@@ -81,7 +81,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #052FB5;
+  background-color: #052fb5;
   height: 100vh;
   width: 100vw;
 }
@@ -107,7 +107,7 @@ button {
   letter-spacing: 5px;
   margin: 0.5em;
   padding: 0.5em 0.5em;
-  cursor: url('./imgs/pointer.png'), pointer;
+  cursor: url("./imgs/pointer.png"), pointer;
 }
 
 .header_bar {
@@ -130,10 +130,6 @@ button {
   color: white;
 }
 
-.right_align_section .gem_amount:hover {
-  color: black;
-}
-
 .modal_btns {
   font-size: 1rem;
 }
@@ -146,9 +142,8 @@ button {
 
 .summon_banner {
   display: flex;
-  margin-top: 20vh;
-  margin-bottom: 5vh;
-  justify-content: center;
+  margin: 20vh auto 5vh auto;
+  max-width: 700px;
 }
 
 .summon_banner img {
@@ -221,8 +216,8 @@ button {
   height: 100%;
 }
 
-#history-table tr {
-  outline: 1px solid black;
+#history-table tr:nth-child(odd) {
+  background-color: #e6e6e6;
 }
 
 #history-table tr * {
@@ -270,58 +265,62 @@ button {
   right: 2vw;
   border: none;
   display: flex;
-  gap:5px;
+  gap: 5px;
   color: black;
   background-color: transparent;
 }
 
-#skip{
+#skip {
   font-size: 2vw;
   letter-spacing: normal;
 }
 
-#skip div span{
+#skip div span {
   position: absolute;
 }
 
-#skip:hover{
+#skip:hover {
   border-color: none;
   box-shadow: none;
   color: white;
 }
 
-#skip:hover div span{
+#skip:hover div span {
   animation-name: skip;
   animation-duration: 1.4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
-@keyframes skip{
-  0%{
-    opacity: 1; transform: translateX(0px) scale(1);
+@keyframes skip {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
   }
-  25%{
-    opacity: 0; transform: translateX(10px) scale(0.8);
+  25% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.8);
   }
-  26%{
-    opacity: 0; transform: translateX(-10px) scale(0.8);
+  26% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.8);
   }
-  60%{
-    opacity: 1; transform: translateX(0px) scale(1);
+  60% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
   }
 }
 
-#skip span:nth-child(1){
+#skip span:nth-child(1) {
   margin-left: 10px;
 }
 
-#skip span:nth-child(2){
+#skip span:nth-child(2) {
   margin-left: 5px;
   animation-delay: 0.2s;
 }
 
-#skip span:nth-child(3){
+#skip span:nth-child(3) {
   animation-delay: 0.4s;
 }
 
@@ -335,11 +334,54 @@ button {
   transform: translate(-50%, -50%);
 }
 
-td:hover .card-text-image {
+td:hover .card-text-image,
+td:active .card-text-image {
   display: initial;
 }
 
 .purchase_counter {
   background-color: #f0f0f0;
   padding: 1ch 2ch;
+}
+
+#rate_info {
+  margin: 1em auto;
+  width: fit-content;
+  color: black;
+  font-size: 2.5ch;
+  border-bottom: 1px dotted currentColor;
+  background-color: rgba(100, 110, 245, 0.404);
+  position: relative;
+  letter-spacing: 0.25ch;
+}
+
+#rate_info > .tooltip {
+  display: none;
+  position: absolute;
+  bottom: 150%;
+  background-color: black;
+  color: #ffffff;
+  width: 50ch;
+  padding: 0em 1em;
+  left: -100%;
+}
+
+#rate_info > .tooltip li {
+  list-style: none;
+}
+
+#rate_info .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+#rate_info:hover > .tooltip,
+#rate_info:active > .tooltip {
+  display: unset;
 }
