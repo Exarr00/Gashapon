@@ -6,7 +6,7 @@
 
 .container {
   position: absolute;
-  background: url(./clouds.png);
+  background: url(./imgs/clouds.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -16,6 +16,7 @@
   width: 100%;
   display: none;
   place-content: center;
+  place-items: center;
   z-index: 1000;
 }
 

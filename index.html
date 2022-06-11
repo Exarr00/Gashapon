@@ -16,13 +16,13 @@
         <div class="right_align_section">
             <div class="status_level">
                 <div class="status_icon" id="goldfish" hidden>
-                    <img style="height: 100%;" src="goldfish.png">
+                    <img style="height: 100%;" src="./imgs/goldfish.png">
                 </div>
                 <div class="status_icon" id="dolphin" hidden>
-                    <img style="height: 100%;" src="dolphin.png">
+                    <img style="height: 100%;" src="./imgs/dolphin.png">
                 </div>
                 <div class="status_icon" id="whale" hidden>
-                    <img style="height: 100%;" src="whale.png">
+                    <img style="height: 100%;" src="./imgs/whale.png">
                 </div>
             </div>
             <div class="gem_amount">
@@ -75,7 +75,7 @@
         </div>
     </dialog>
     <div class="summon_banner">
-        <img src="./banner.png" alt="banner">
+        <img src="./imgs/banner.png" alt="banner">
     </div>
     <div class="video-container">
         <video src="./imgs/5starwish-single.mp4" playsinline muted></video>
@@ -85,8 +85,13 @@
         </button>
     </div>
     <div class="container">
-        <button class="close">close</button>
-        <div class="box" id="cards-summoned">
+        <div class="box" id="cards-summoned"></div>
+        <div class="summon_btns">
+            <button class="close">Return to Home</button>
+            <button id="resingle" value="100" id="asdf">SINGLE
+                SUMMON</button>
+            <button id="remulti" id="asdf" value="1000">MULTI
+                SUMMON</button>
         </div>
     </div>
     <div class="summon_btns">

@@ -160,6 +160,7 @@ button {
 .summon_btns {
   display: flex;
   padding: 0 25vw;
+  width: 100vw;
   justify-content: space-evenly;
 }
 
