@@ -97,6 +97,7 @@ button:focus {
 button {
   color: rgb(40, 48, 153);
   transition: 0.25s;
+  border-radius: 10%/50%;
 }
 
 button {

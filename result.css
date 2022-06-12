@@ -161,6 +161,9 @@
   background-color: black;
   color: white;
   text-align: center;
+  display: flex;
+  place-content: center;
+  place-items: center;
 }
 
 .box > div:nth-child(-n + 5) {
