@@ -46,14 +46,14 @@
   position: relative;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.1);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: url('./imgs/pointer.png'), pointer;
 }
 
 .card:before {
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   position: absolute;
@@ -143,7 +143,7 @@
   width: 20%;
   aspect-ratio: 1/1;
   z-index: 999;
-  background: url("./imgs/Star.png");
+  background: url('./imgs/Star.png');
   background-position: center;
   background-size: 100%;
 }
@@ -215,5 +215,32 @@
 
   to {
     transform: translateY(0px);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .box {
+    --bradius:10px;
+  }
+
+  .card {
+    padding-top: 90%;
+    width: 90%;
+    position: relative;
+  }
+
+  .rating {
+    width: 95%;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 0 0 var(--bradius) var(--bradius);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+  }
+
+  .name {
+    display: none;
   }
 }
