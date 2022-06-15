@@ -386,3 +386,61 @@ td:active .card-text-image {
 #rate_info:active > .tooltip {
   display: unset;
 }
+
+.landscape{
+  position: absolute;
+  display: none;
+  top:0;
+  left: 0;
+  background-color: black;
+  color:white;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+}
+
+
+@media only screen and (max-width: 1000px){
+  @media only screen and (orientation:portrait) {
+    .landscape{
+      display: flex;
+    }
+  }
+
+  .summon_banner {
+    margin: 5vh auto 5vh auto;
+    max-width: 450px;
+  }
+  
+  .summon_btns{
+    padding: 0 10vw;
+  }
+
+  .status_level{
+    width: 30px;
+  }
+
+  .modal_btns{
+    height: 20px;
+    width: 100px;
+    font-size: 10px;
+  }
+
+  .right_align_section .gem_amount{
+    padding:0;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .summon_btns button {
+    height: 20px;
+    width: 200px;
+    font-size: 10px;
+  }
+
+  #rate_info{
+    font-size: 1.5ch;
+  }
+
+}

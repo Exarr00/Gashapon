@@ -26,9 +26,9 @@
                 </div>
             </div>
             <div class="gem_amount">
-                Current Gem Count: <span id="GEM_AMT"></span>
+                Gems: <span id="GEM_AMT"></span>
             </div>
-            <button class="modal_btns open-button">BUY GEMS</button>
+            <button class="modal_btns open-button">BUY</button>
         </div>
     </div>
     <dialog class="modal" id="modal">
@@ -87,18 +87,14 @@
     <div class="container">
         <div class="box" id="cards-summoned"></div>
         <div class="summon_btns">
-            <button class="close">Return to Home</button>
-            <button id="resingle" value="100" id="asdf">SINGLE
-                SUMMON</button>
-            <button id="remulti" id="asdf" value="1000">MULTI
-                SUMMON</button>
+            <button class="close">Return Home</button>
+            <button id="resingle" value="100" id="asdf">1X SUMMON</button>
+            <button id="remulti" id="asdf" value="1000">10X SUMMON</button>
         </div>
     </div>
     <div class="summon_btns">
-        <button id="single" value="100" id="asdf" disabled>SINGLE
-            SUMMON</button>
-        <button id="multi" id="asdf" value="1000" disabled>MULTI
-            SUMMON</button>
+        <button id="single" value="100" id="asdf" disabled>1X SUMMON</button>
+        <button id="multi" id="asdf" value="1000" disabled>10X SUMMON</button>
     </div>
     <div id="rate_info">
         Summoning Rates
@@ -111,6 +107,9 @@
                 <li>3 Star: 94%</li>
             </ul>
         </span>
+    </div>
+    <div class="landscape">
+        <p>Switch to Landscape</p>
     </div>
 </body>
 <script type="module" src="index.js"></script>
