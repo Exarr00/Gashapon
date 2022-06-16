@@ -402,6 +402,10 @@ td:active .card-text-image {
 
 @media only screen and (max-width: 1000px){
   @media only screen and (orientation:portrait) {
+    body{
+      background-color: black;
+    }
+
     .landscape{
       display: flex;
     }
@@ -418,6 +422,7 @@ td:active .card-text-image {
 
   .status_level{
     width: 30px;
+    height: 30px;
   }
 
   .modal_btns{
