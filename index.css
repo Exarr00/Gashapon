@@ -128,6 +128,7 @@ button {
 
 .right_align_section .gem_amount {
   padding: 12px 0;
+  letter-spacing: 0.2em;
   color: white;
 }
 

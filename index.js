@@ -14,7 +14,9 @@ const reMultiSummon = document.getElementById("remulti");
 const testGetHistory = document.getElementById("history-open");
 
 //get user's gem data from localstorage
-let GEM_COUNT = localStorage.getItem("GEMS_AMT");
+let GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"))
+  .toString()
+  .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 //initiate purchase amount to 0
 let PURCHASE_AMOUNT = 0;
