@@ -30,6 +30,7 @@ services().then((data) => {
   testGetHistory.disabled = false;
 });
 
+//nothing
 //check if user has reached >10k gems
 const whaleWatchers = () => {
   let icon = document.querySelectorAll(".status_icon");
