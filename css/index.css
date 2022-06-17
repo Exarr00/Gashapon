@@ -450,7 +450,7 @@ td:active .card-text-image {
   }
 }
 
-@media screen and (min-aspect-ratio: 21/9){
+@media screen and (min-width: 1000px) and (min-aspect-ratio: 21/9){
   body {
     background-color: black;
     overflow: hidden;
