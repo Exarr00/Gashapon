@@ -6,7 +6,7 @@
 
 .container {
   position: absolute;
-  background: url(./imgs/clouds.png);
+  background: url('../imgs/clouds.png');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -41,15 +41,15 @@
 }
 
 .card {
-  padding-top: 120%;
-  width: 90%;
+  padding-top: 100%;
+  width: 85%;
   position: relative;
 }
 
 .card:hover {
   transform: scale(1.1);
   transition: all 0.2s ease-in-out;
-  cursor: url('./imgs/pointer.png'), pointer;
+  cursor: url('../imgs/pointer.png'), pointer;
 }
 
 .card:before {
@@ -143,7 +143,7 @@
   width: 20%;
   aspect-ratio: 1/1;
   z-index: 999;
-  background: url('./imgs/Star.png');
+  background: url('../imgs/Star.png');
   background-position: center;
   background-size: 100%;
 }
