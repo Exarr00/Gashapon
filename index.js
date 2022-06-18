@@ -173,7 +173,7 @@ const gotosummon = () => {
 
 const toClose = () => {
   container.style.display = 'none';
-  document.body.style['overflow'] = 'auto';
+  // document.body.style['overflow'] = 'auto';
 };
 
 const toSkip = () => {
