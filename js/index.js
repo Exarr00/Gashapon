@@ -14,8 +14,7 @@ const reMultiSummon = document.getElementById('remulti');
 const testGetHistory = document.getElementById('history-open');
 
 //get user's gem data from localstorage
-let GEM_COUNT = localStorage
-  .getItem('GEMS_AMT')
+let GEM_COUNT = Number(localStorage.getItem('GEMS_AMT'))
   .toString()
   .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
@@ -31,6 +30,7 @@ services().then((data) => {
   testGetHistory.disabled = false;
 });
 
+//nothing
 //check if user has reached >10k gems
 const whaleWatchers = () => {
   let icon = document.querySelectorAll('.status_icon');
@@ -145,6 +145,7 @@ singleSummon.addEventListener('click', doSingle);
 reSingleSummon.addEventListener('click', doSingle);
 //multi summon
 multiSummon.addEventListener('click', doMulti);
+
 reMultiSummon.addEventListener('click', doMulti);
 
 const videoContainer = document.querySelector('.video-container');
