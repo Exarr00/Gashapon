@@ -164,7 +164,7 @@ const tosummon = () => {
 };
 
 const gotosummon = () => {
-  document.body.style['overflow'] = 'hidden';
+  // document.body.style['overflow'] = 'hidden';
   videoContainer.style.display = 'none';
   video.currentTime = 0; //mobile??
   console.log(getComputedStyle(container).display);
