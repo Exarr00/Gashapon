@@ -126,6 +126,13 @@ const getFiveStar = () => {
   return fiveStars.filter((star) => star.featured === false)[randFive];
 };
 
+const getStandFiveStar = () => {
+  const fiveStars = getUnits(5);
+  const d = new Date();
+  const RAND_NUM = Math.round((d.getTime() * Math.random()) % 4);
+  fiveStars.filter((star) => star.featured === false)[RAND_NUM];
+};
+
 const baseProbability = generateRange(940, 53, 7);
 const pityProbability = generateRange(932, 53, 15);
 
