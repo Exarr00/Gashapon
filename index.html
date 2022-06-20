@@ -14,6 +14,15 @@
     <div class="header_bar">
         <button class="modal_btns history-open" id="history-open">HISTORY</button>
         <div class="right_align_section">
+            <div class="gem_amount">
+                Gems: <span id="GEM_AMT"></span>
+            </div>
+            <button class="modal_btns open-button">BUY</button>
+        </div>
+    </div>
+    <dialog class="modal" id="modal">
+        <h2 style="text-align: center; margin-bottom: 1rem;">Purchase Gems</h2>
+        <div class="purchase_counter">Total Gems Bought: <span id="buy_number">0</span>
             <div class="status_level">
                 <div class="status_icon" id="goldfish" hidden>
                     <img style="height: 100%;" src="./imgs/goldfish.png">
@@ -25,15 +34,7 @@
                     <img style="height: 100%;" src="./imgs/whale.png">
                 </div>
             </div>
-            <div class="gem_amount">
-                Gems: <span id="GEM_AMT"></span>
-            </div>
-            <button class="modal_btns open-button">BUY</button>
         </div>
-    </div>
-    <dialog class="modal" id="modal">
-        <h2 style="text-align: center; margin-bottom: 1rem;">Purchase Gems</h2>
-        <div class="purchase_counter">Total Gems Bought: <span id="buy_number">0</span></div>
         <div class="purchase_selection">
             <button class="purchase_btn" value="100">ADD 100 <span class="costs_value">$1</span></button>
             <button class="purchase_btn" value="550">ADD 550 <span class="costs_value">$5</span></button>
@@ -84,18 +85,6 @@
             <div><span>›</span><span>›</span><span>›</span></div>
         </button>
     </div>
-    <div class="container">
-        <div class="box" id="cards-summoned"></div>
-        <div class="summon_btns">
-            <button class="close">Return Home</button>
-            <button id="resingle" value="100" id="asdf">1X SUMMON</button>
-            <button id="remulti" id="asdf" value="1000">10X SUMMON</button>
-        </div>
-    </div>
-    <div class="summon_btns">
-        <button id="single" value="100" id="asdf" disabled>1X SUMMON</button>
-        <button id="multi" id="asdf" value="1000" disabled>10X SUMMON</button>
-    </div>
     <div id="rate_info">
         Summoning Rates
         <span class="tooltip">
@@ -107,6 +96,18 @@
                 <li>3 Star: 94%</li>
             </ul>
         </span>
+    </div>
+    <div class="container">
+        <div class="box" id="cards-summoned"></div>
+        <div class="summon_btns">
+            <button class="close">Return Home</button>
+            <button id="resingle" value="100" id="asdf">1X SUMMON</button>
+            <button id="remulti" id="asdf" value="1000">10X SUMMON</button>
+        </div>
+    </div>
+    <div class="summon_btns">
+        <button id="single" value="100" id="asdf" disabled>1X SUMMON</button>
+        <button id="multi" id="asdf" value="1000" disabled>10X SUMMON</button>
     </div>
     <div class="landscape">
         <p>Viewport is too small</p>
