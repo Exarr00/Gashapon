@@ -1,7 +1,9 @@
-const getChar = () => {
+const getChar = async () => {
   return fetch("./characters.json").then((res) => res.json());
 };
 
-const standardChar = () => {};
+const getStandardChar = async () => {
+  return fetch("./standard.json").then((res) => res.json());
+};
 
-export default getChar;
+export default { getChar, getStandardChar };

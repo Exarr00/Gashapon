@@ -23,12 +23,32 @@ let PURCHASE_AMOUNT = 0;
 //set user's gem data to element
 document.getElementById("GEM_AMT").textContent = GEM_COUNT;
 
-services().then((data) => {
+services.getChar().then((data) => {
   gacha.setGacha(data);
   singleSummon.disabled = false;
   multiSummon.disabled = false;
   testGetHistory.disabled = false;
 });
+
+//###WORK IN PROGRESS #####
+// let standardBanner = false;
+
+// const switchBanners = () => {
+//   standardBanner
+//     ? services.getStandardChar()
+//     : services.getChar().then((data) => {
+//         gacha.setGacha(data);
+//       });
+
+//   document.getElementById("banst").textContent = standardBanner
+//     ? "Standard Banner"
+//     : "Limited Banner";
+//   standardBanner = !standardBanner;
+// };
+
+// document.getElementById("somestuffs").addEventListener("click", switchBanners);
+
+//#####################################################################################################
 
 //nothing
 //check if user has reached >10k gems
