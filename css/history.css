@@ -1,0 +1,131 @@
+/* CSS for elements related to summon history */
+
+.history-list {
+  height: fit-content;
+  margin-top: 3%;
+}
+
+.history-list table {
+  width: 100%;
+  height: 100%;
+}
+
+#history-table tr:nth-child(odd) {
+  background-color: #e6e6e6;
+}
+
+#history-table tr * {
+  text-align: center;
+  padding: 5px 0;
+}
+
+tr {
+  max-height: 34px;
+}
+
+.page-numbers {
+  display: flex;
+  position: relative;
+  margin-top: 0.25rem;
+  top: 0.1rem;
+  justify-content: center;
+}
+
+.page-numbers * {
+  width: 25px;
+  height: 25px;
+}
+
+.btn-pagination {
+  border: none;
+  background-color: transparent;
+}
+
+.btn-pagination svg {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-pagination:hover,
+.btn-pagination:focus {
+  box-shadow: none;
+}
+
+.page-numbers #current-number {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 8px;
+}
+
+#historyImageSmall {
+  width: 3%;
+}
+
+#modalImg {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+#modal-content-img {
+  margin: 5vh auto;
+  display: block;
+  height: 80vh;
+  max-height: 500px;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.closeImage {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.closeImage:hover,
+.closeImage:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
