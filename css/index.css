@@ -144,6 +144,11 @@ button {
   margin-right: 0.5rem;
 }
 
+.status_level img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
 .summon_banner {
   display: flex;
   margin: 20vh auto 5vh auto;
@@ -427,11 +432,6 @@ td:active .card-text-image {
 
   .summon_btns {
     padding: 0 10vw;
-  }
-
-  .status_level {
-    width: 30px;
-    height: 30px;
   }
 
   .modal_btns {
