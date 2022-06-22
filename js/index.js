@@ -194,3 +194,5 @@ const toSkip = () => {
 video.addEventListener("ended", gotosummon);
 closeBtn.addEventListener("click", toClose);
 skipBtn.addEventListener("click", toSkip);
+
+let modalImg = document.getElementById("modalImg");
