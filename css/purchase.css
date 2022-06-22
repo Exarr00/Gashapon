@@ -1,0 +1,68 @@
+.purchase_selection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.purchase_btn {
+  border-radius: 0;
+  padding: 0.5em 0.5em 0 0.5em;
+  position: relative;
+  border-color: black black rgb(224, 255, 255) black !important;
+  background-color: rgb(77 131 247);
+  color: white;
+}
+
+.costs_value {
+  display: block;
+  position: relative;
+  background-color: rgb(40, 48, 153);
+  color: white;
+  padding: 0.75ch 0 0 0;
+  margin: 0.5em 0 0 0;
+  border: 0.2rem solid rgb(224, 255, 255);
+  border-bottom: 0;
+}
+
+.costs_value::after {
+  content: '';
+  position: absolute;
+  height: 0.85em;
+  width: calc(100% + 0.4rem);
+  top: -3px;
+  left: -0.2rem;
+  box-shadow: -2px -2px 0px 0px black, 2px -2px 0px 0px black;
+}
+
+.purchase_btn::before {
+  content: '';
+  position: absolute;
+  background-color: rgb(224, 255, 255);
+  width: calc(0.5em + 2px);
+  height: 1em;
+  bottom: -2px;
+  left: -2px;
+  border-top: 2px solid black;
+}
+
+.purchase_btn::after {
+  content: '';
+  position: absolute;
+  width: calc(0.5em + 2px);
+  background-color: rgb(224, 255, 255);
+  height: 1em;
+  bottom: -2px;
+  right: -2px;
+  border-top: 2px solid black;
+}
+
+.purchase_btn:hover {
+  box-shadow: none;
+  background-color: rgb(169, 196, 255);
+  color: black;
+}
+
+.purchase_btn:hover .costs_value {
+  background-color: rgb(139, 146, 248);
+  color: black;
+}
