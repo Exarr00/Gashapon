@@ -75,7 +75,7 @@
   margin-right: 0.5rem;
 }
 
-.status_level img {
+.status_level .status_icon img {
   width: 100%;
   aspect-ratio: 1 / 1;
 }
