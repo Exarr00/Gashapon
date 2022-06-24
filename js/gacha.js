@@ -47,10 +47,10 @@ const shuffle = (array) => {
 const roll = () => {
   fourStarCounter++;
   fiveStarCounter++;
-  if (fourStarCounter === 10) {
-    return getResult(4);
-  } else if (fiveStarCounter === 100 || fiveStarCounter === 135) {
+  if (fiveStarCounter === 100 || fiveStarCounter === 135) {
     return getResult(5);
+  } else if (fourStarCounter >= 10) {
+    return getResult(4);
   } else {
     if (!onSoft) {
       return getResult(baseProbability[getRandNum(baseProbability.length)]);

@@ -1,6 +1,6 @@
 const history = [];
-let historyList = document.getElementById("history-table");
-const pageNumber = document.getElementById("current-number");
+let historyList = document.getElementById('history-table');
+const pageNumber = document.getElementById('current-number');
 
 const getHistory = () => {
   const actualHistory = history.reverse();
@@ -57,7 +57,9 @@ const addListeners = () => {
   });
 };
 
+
 const changePage = () => {
+  const rarity = { '3': 'bronzeHistory', '4': 'silverHistory', '5': 'goldHistory' };
   let x = getHistory().slice(
     (Number(pageNumber.textContent) - 1) * 7,
     7 * Number(pageNumber.textContent)
@@ -66,6 +68,7 @@ const changePage = () => {
     historyList.removeChild(historyList.lastChild);
   }
   x.forEach((historyItem) => {
+
     //create elements for the table
     let itemName = document.createElement("td");
     let itemDate = document.createElement("td");
@@ -73,12 +76,14 @@ const changePage = () => {
     let tableRow = document.createElement("tr");
     let itemImageCell = document.createElement("td");
     let imageSmall = document.createElement("img");
-
+    
+    tableRow.classList.add(rarity[String(historyItem.rating)])
     //set content and attributes for elements
     imageSmall.src = `./imgs/cards/${historyItem.name
       .split(" ")
       .join("_")}.png`;
     itemImageCell.setAttribute("class", "historyImageSmall");
+
     itemName.textContent = historyItem.name;
     itemDate.textContent = historyItem.date.toDateString();
     itemRating.textContent = historyItem.rating;
