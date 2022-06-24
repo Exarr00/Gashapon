@@ -57,7 +57,7 @@ tr {
   padding-top: 8px;
 }
 
-#historyImageSmall {
+.historyImageSmall {
   width: 3%;
 }
 
@@ -112,8 +112,17 @@ tr {
   }
 }
 
+#imageCaption {
+  margin: auto;
+  display: block;
+  width: fit-content;
+  font-size: 5vh;
+  text-align: center;
+  color: #ccc;
+}
+
 /* The Close Button */
-.closeImage {
+#closeImage {
   position: absolute;
   top: 15px;
   right: 35px;
@@ -123,8 +132,8 @@ tr {
   transition: 0.3s;
 }
 
-.closeImage:hover,
-.closeImage:focus {
+#closeImage:hover,
+#closeImage:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;

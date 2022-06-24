@@ -38,42 +38,23 @@ const updateHistory = (...result) => {
 };
 
 const addListeners = () => {
-  document.querySelectorAll("#historyImageSmall").forEach((item) => {
+  document.querySelectorAll(".historyImageSmall").forEach((item) => {
     item.addEventListener("click", (item2) => {
-      if (item2.target.nextSibling) {
-        item2.target.nextSibling.style.display = "block";
+      console.log(item2);
+      if (document.getElementById("modalImg").style.display !== "block") {
+        document.getElementById("modal-content-img").src = item2.target.src;
+        //hacky solution to set caption to textconent associated with image
+        document.getElementById("imageCaption").textContent = item2.target.src
+          .substring(33)
+          .replace(".png", "")
+          .replaceAll("_", " ");
+        document.getElementById("modalImg").style.display = "block";
       }
     });
   });
-  document.querySelectorAll(".closeImage").forEach((closeItem) => {
-    closeItem.addEventListener("click", (closeItem2) => {
-      closeItem2.target.parentNode.style.display = "none";
-    });
+  document.getElementById("closeImage").addEventListener("click", () => {
+    document.getElementById("modalImg").style.display = "none";
   });
-};
-
-const subFunction = (cell, data) => {
-  let itemImageCell = document.createElement("td");
-  let imageSmall = document.createElement("img");
-  let imageLarge = document.createElement("img");
-  let imageModal = document.createElement("div");
-  let closeImage = document.createElement("span");
-
-  imageSmall.src = `./imgs/cards/${data.name.split(" ").join("_")}.png`;
-  imageLarge.src = `./imgs/cards/${data.name.split(" ").join("_")}.png`;
-  imageLarge.setAttribute("id", "modal-content-img");
-  itemImageCell.setAttribute("id", "historyImageSmall");
-  imageModal.setAttribute("id", "modalImg");
-  closeImage.setAttribute("class", "closeImage");
-  closeImage.textContent = "X";
-
-  imageModal.appendChild(closeImage);
-  imageModal.appendChild(imageLarge);
-  itemImageCell.appendChild(imageSmall);
-  itemImageCell.appendChild(imageModal);
-  cell.appendChild(itemImageCell);
-
-  addListeners();
 };
 
 const changePage = () => {
@@ -85,19 +66,53 @@ const changePage = () => {
     historyList.removeChild(historyList.lastChild);
   }
   x.forEach((historyItem) => {
+    //create elements for the table
     let itemName = document.createElement("td");
     let itemDate = document.createElement("td");
     let itemRating = document.createElement("td");
     let tableRow = document.createElement("tr");
+    let itemImageCell = document.createElement("td");
+    let imageSmall = document.createElement("img");
+
+    //set content and attributes for elements
+    imageSmall.src = `./imgs/cards/${historyItem.name
+      .split(" ")
+      .join("_")}.png`;
+    itemImageCell.setAttribute("class", "historyImageSmall");
     itemName.textContent = historyItem.name;
     itemDate.textContent = historyItem.date.toDateString();
     itemRating.textContent = historyItem.rating;
-    subFunction(tableRow, historyItem);
+
+    //Append elements to table
+    itemImageCell.appendChild(imageSmall);
+    tableRow.appendChild(itemImageCell);
     tableRow.appendChild(itemName);
     tableRow.appendChild(itemDate);
     tableRow.appendChild(itemRating);
     historyList.appendChild(tableRow);
   });
+
+  //Elements for image modal
+  let histList = document.getElementById("history-list");
+  let imageLarge = document.createElement("img");
+  let imageModal = document.createElement("div");
+  let imageCaption = document.createElement("div");
+  let closeImage = document.createElement("span");
+
+  //Set content for image modal
+  imageLarge.setAttribute("id", "modal-content-img");
+  imageModal.setAttribute("id", "modalImg");
+  imageCaption.setAttribute("id", "imageCaption");
+  closeImage.setAttribute("id", "closeImage");
+  closeImage.textContent = "X";
+
+  //Append image modal to table
+  imageModal.appendChild(closeImage);
+  imageModal.appendChild(imageLarge);
+  imageModal.appendChild(imageCaption);
+  histList.appendChild(imageModal);
+
+  addListeners();
 };
 
 export default {
