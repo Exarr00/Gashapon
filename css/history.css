@@ -129,3 +129,15 @@ tr {
   text-decoration: none;
   cursor: pointer;
 }
+
+.bronzeHistory {
+  color: brown;
+}
+
+.silverHistory {
+  color: silver;
+}
+
+.goldHistory {
+  color: orange;
+}
