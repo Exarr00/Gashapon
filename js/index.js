@@ -129,7 +129,7 @@ historyClose.addEventListener("click", () => {
 const doSingle = (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
-    const result = gacha.roll();
+    const result = ban_type === "LIMITED" ? gacha.roll() : gacha.standardRoll();
     history.updateHistory(result);
     tosummon();
     showResult(result);
@@ -142,7 +142,8 @@ const doSingle = (e) => {
 const doMulti = (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
-    const result = gacha.multiRoll();
+    const result =
+      ban_type === "LIMITED" ? gacha.multiRoll() : gacha.standardMultiRoll();
     history.updateHistory(...result);
     tosummon();
     showResult(...result);
@@ -153,20 +154,13 @@ const doMulti = (e) => {
 };
 
 //single summon
-singleSummon.addEventListener("click", (e) => {
-  ban_type === "LIMITED" ? doSingle(e) : doSingleStandard(e);
-});
-reSingleSummon.addEventListener("click", (e) => {
-  ban_type === "LIMITED" ? doSingle(e) : doSingleStandard(e);
-});
-//multi summon
-multiSummon.addEventListener("click", (e) => {
-  ban_type === "LIMITED" ? doMulti(e) : doMultiStandard(e);
-});
+singleSummon.addEventListener("click", doSingle);
+reSingleSummon.addEventListener("click", doSingle);
 
-reMultiSummon.addEventListener("click", (e) => {
-  ban_type === "LIMITED" ? doMulti(e) : doMultiStandard(e);
-});
+//multi summon
+multiSummon.addEventListener("click", doMulti);
+reMultiSummon.addEventListener("click", doMulti);
+
 const videoContainer = document.querySelector(".video-container");
 const video = document.querySelector("video");
 const container = document.querySelector(".container");
@@ -211,29 +205,3 @@ checkbox.addEventListener("click", (e) => {
   ban_type.textContent =
     ban_type.textContent === "LIMITED" ? "STANDARD" : "LIMITED";
 });
-
-const doSingleStandard = (e) => {
-  GEM_COUNT = localStorage.getItem("GEMS_AMT");
-  if (gems.useGems(GEM_COUNT, e)) {
-    const result = gacha.standardRoll();
-    history.updateHistory(result);
-    tosummon();
-    showResult(result);
-    whaleWatchers();
-  } else {
-    window.alert("not enough gems");
-  }
-};
-
-const doMultiStandard = (e) => {
-  GEM_COUNT = localStorage.getItem("GEMS_AMT");
-  if (gems.useGems(GEM_COUNT, e)) {
-    const result = gacha.standardMultiRoll();
-    history.updateHistory(...result);
-    tosummon();
-    showResult(...result);
-    whaleWatchers();
-  } else {
-    window.alert("not enough gems");
-  }
-};
