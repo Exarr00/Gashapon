@@ -12,7 +12,7 @@ const multiSummon = document.getElementById("multi");
 const reSingleSummon = document.getElementById("resingle");
 const reMultiSummon = document.getElementById("remulti");
 const testGetHistory = document.getElementById("history-open");
-let ban_type = document.getElementById("banner-type");
+let ban_type = "LIMITED";
 
 //get user's gem data from localstorage
 let GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"))
@@ -31,27 +31,6 @@ services.getChar().then((data) => {
   testGetHistory.disabled = false;
 });
 
-//###WORK IN PROGRESS #####
-// let standardBanner = false;
-
-// const switchBanners = () => {
-//   standardBanner
-//     ? services.getStandardChar()
-//     : services.getChar().then((data) => {
-//         gacha.setGacha(data);
-//       });
-
-//   document.getElementById("banst").textContent = standardBanner
-//     ? "Standard Banner"
-//     : "Limited Banner";
-//   standardBanner = !standardBanner;
-// };
-
-// document.getElementById("somestuffs").addEventListener("click", switchBanners);
-
-//#####################################################################################################
-
-//nothing
 //check if user has reached >10k gems
 const whaleWatchers = () => {
   let icon = document.querySelectorAll(".status_icon");
@@ -202,6 +181,11 @@ skipBtn.addEventListener("click", toSkip);
 let checkbox = document.getElementById("checkbox-banner");
 
 checkbox.addEventListener("click", (e) => {
-  ban_type.textContent =
-    ban_type.textContent === "LIMITED" ? "STANDARD" : "LIMITED";
+  ban_type = ban_type === "LIMITED" ? "STANDARD" : "LIMITED";
+  document
+    .getElementsByClassName("limited_banner")[0]
+    .classList.toggle("active");
+  document
+    .getElementsByClassName("standard_banner")[0]
+    .classList.toggle("active");
 });
