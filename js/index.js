@@ -12,6 +12,7 @@ const multiSummon = document.getElementById("multi");
 const reSingleSummon = document.getElementById("resingle");
 const reMultiSummon = document.getElementById("remulti");
 const testGetHistory = document.getElementById("history-open");
+let ban_type = document.getElementById("banner-type");
 
 //get user's gem data from localstorage
 let GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"))
@@ -152,13 +153,20 @@ const doMulti = (e) => {
 };
 
 //single summon
-singleSummon.addEventListener("click", doSingle);
-reSingleSummon.addEventListener("click", doSingle);
+singleSummon.addEventListener("click", (e) => {
+  ban_type === "LIMITED" ? doSingle(e) : doSingleStandard(e);
+});
+reSingleSummon.addEventListener("click", (e) => {
+  ban_type === "LIMITED" ? doSingle(e) : doSingleStandard(e);
+});
 //multi summon
-multiSummon.addEventListener("click", doMulti);
+multiSummon.addEventListener("click", (e) => {
+  ban_type === "LIMITED" ? doMulti(e) : doMultiStandard(e);
+});
 
-reMultiSummon.addEventListener("click", doMulti);
-
+reMultiSummon.addEventListener("click", (e) => {
+  ban_type === "LIMITED" ? doMulti(e) : doMultiStandard(e);
+});
 const videoContainer = document.querySelector(".video-container");
 const video = document.querySelector("video");
 const container = document.querySelector(".container");
@@ -197,14 +205,25 @@ skipBtn.addEventListener("click", toSkip);
 
 ///////////////////////////////////////////////////////
 
-let ban_type = document.getElementById("banner-type");
 let checkbox = document.getElementById("checkbox-banner");
-let normBtn = document.getElementById("stan_summon");
 
 checkbox.addEventListener("click", (e) => {
   ban_type.textContent =
     ban_type.textContent === "LIMITED" ? "STANDARD" : "LIMITED";
 });
+
+const doSingleStandard = (e) => {
+  GEM_COUNT = localStorage.getItem("GEMS_AMT");
+  if (gems.useGems(GEM_COUNT, e)) {
+    const result = gacha.standardRoll();
+    history.updateHistory(result);
+    tosummon();
+    showResult(result);
+    whaleWatchers();
+  } else {
+    window.alert("not enough gems");
+  }
+};
 
 const doMultiStandard = (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
@@ -218,5 +237,3 @@ const doMultiStandard = (e) => {
     window.alert("not enough gems");
   }
 };
-
-normBtn.addEventListener("click", doMultiStandard);

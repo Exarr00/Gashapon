@@ -169,6 +169,7 @@ const getStandardResult = (rarity) => {
 
 const getStandardFourStar = () => {
   const fourStars = getUnits(4);
+  fourStarCounter = 0;
   const d = new Date();
   const RAND_NUM = Math.round((d.getTime() * Math.random()) % 9);
   return fourStars[RAND_NUM];
@@ -176,8 +177,13 @@ const getStandardFourStar = () => {
 
 const getStandardFiveStar = () => {
   const fiveStars = getUnits(5);
+  if (guaranteedFiveStar) {
+    guaranteedFiveStar = false;
+    fiveStarCounter = 0;
+  }
   const d = new Date();
   const RAND_NUM = Math.round((d.getTime() * Math.random()) % 4);
+  console.log("FIVE STAR SUMMONED");
   return fiveStars[RAND_NUM];
 };
 
@@ -186,7 +192,8 @@ const standardRoll = () => {
   fiveStarCounter++;
   if (fourStarCounter === 10) {
     return getStandardResult(4);
-  } else if (fiveStarCounter === 135) {
+  } else if (fiveStarCounter === 100) {
+    guaranteedFiveStar = true;
     return getStandardResult(5);
   } else {
     return getStandardResult(
