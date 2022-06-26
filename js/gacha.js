@@ -157,6 +157,30 @@ const pityProbability = generateRange(932, 53, 15);
 
 //Different Banner code //Standard Banner
 
+const getStandardResult = (rarity) => {
+  if (rarity === 3) {
+    return getThreeStar();
+  } else if (rarity === 4) {
+    return getStandardFourStar();
+  } else if (rarity === 5) {
+    return getStandardFiveStar();
+  }
+};
+
+const getStandardFourStar = () => {
+  const fourStars = getUnits(4);
+  const d = new Date();
+  const RAND_NUM = Math.round((d.getTime() * Math.random()) % 9);
+  return fourStars[RAND_NUM];
+};
+
+const getStandardFiveStar = () => {
+  const fiveStars = getUnits(5);
+  const d = new Date();
+  const RAND_NUM = Math.round((d.getTime() * Math.random()) % 4);
+  return fiveStars[RAND_NUM];
+};
+
 const standardRoll = () => {
   fourStarCounter++;
   fiveStarCounter++;
@@ -177,30 +201,6 @@ const standardMultiRoll = () => {
     multiResults.push(standardRoll());
   }
   return multiResults;
-};
-
-const getStandardResult = (rarity) => {
-  if (rarity === 3) {
-    return getThreeStar();
-  } else if (rarity === 4) {
-    return getStandardFourStar();
-  } else if (rarity === 5) {
-    return getStandardFiveStar();
-  }
-};
-
-const getStandardFourStar = () => {
-  const fourStars = getUnits(4);
-  const d = new Date();
-  const RAND_NUM = Math.round((d.getTime() * Math.random()) % 9);
-  fourStars.filter((star) => star.featured === false)[RAND_NUM];
-};
-
-const getStandardFiveStar = () => {
-  const fiveStars = getUnits(5);
-  const d = new Date();
-  const RAND_NUM = Math.round((d.getTime() * Math.random()) % 4);
-  fiveStars.filter((star) => star.featured === false)[RAND_NUM];
 };
 
 export default { roll, setGacha, multiRoll, standardRoll, standardMultiRoll };

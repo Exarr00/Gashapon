@@ -195,4 +195,28 @@ video.addEventListener("ended", gotosummon);
 closeBtn.addEventListener("click", toClose);
 skipBtn.addEventListener("click", toSkip);
 
-let modalImg = document.getElementById("modalImg");
+///////////////////////////////////////////////////////
+
+let ban_type = document.getElementById("banner-type");
+let checkbox = document.getElementById("checkbox-banner");
+let normBtn = document.getElementById("stan_summon");
+
+checkbox.addEventListener("click", (e) => {
+  ban_type.textContent =
+    ban_type.textContent === "LIMITED" ? "STANDARD" : "LIMITED";
+});
+
+const doMultiStandard = (e) => {
+  GEM_COUNT = localStorage.getItem("GEMS_AMT");
+  if (gems.useGems(GEM_COUNT, e)) {
+    const result = gacha.standardMultiRoll();
+    history.updateHistory(...result);
+    tosummon();
+    showResult(...result);
+    whaleWatchers();
+  } else {
+    window.alert("not enough gems");
+  }
+};
+
+normBtn.addEventListener("click", doMultiStandard);
