@@ -12,6 +12,7 @@ const multiSummon = document.getElementById("multi");
 const reSingleSummon = document.getElementById("resingle");
 const reMultiSummon = document.getElementById("remulti");
 const testGetHistory = document.getElementById("history-open");
+let ban_type = "LIMITED";
 
 //get user's gem data from localstorage
 let GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"))
@@ -30,27 +31,6 @@ services.getChar().then((data) => {
   testGetHistory.disabled = false;
 });
 
-//###WORK IN PROGRESS #####
-// let standardBanner = false;
-
-// const switchBanners = () => {
-//   standardBanner
-//     ? services.getStandardChar()
-//     : services.getChar().then((data) => {
-//         gacha.setGacha(data);
-//       });
-
-//   document.getElementById("banst").textContent = standardBanner
-//     ? "Standard Banner"
-//     : "Limited Banner";
-//   standardBanner = !standardBanner;
-// };
-
-// document.getElementById("somestuffs").addEventListener("click", switchBanners);
-
-//#####################################################################################################
-
-//nothing
 //check if user has reached >10k gems
 const whaleWatchers = () => {
   let icon = document.querySelectorAll(".status_icon");
@@ -128,7 +108,7 @@ historyClose.addEventListener("click", () => {
 const doSingle = (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
-    const result = gacha.roll();
+    const result = ban_type === "LIMITED" ? gacha.roll() : gacha.standardRoll();
     history.updateHistory(result);
     tosummon();
     showResult(result);
@@ -141,7 +121,8 @@ const doSingle = (e) => {
 const doMulti = (e) => {
   GEM_COUNT = localStorage.getItem("GEMS_AMT");
   if (gems.useGems(GEM_COUNT, e)) {
-    const result = gacha.multiRoll();
+    const result =
+      ban_type === "LIMITED" ? gacha.multiRoll() : gacha.standardMultiRoll();
     history.updateHistory(...result);
     tosummon();
     showResult(...result);
@@ -154,9 +135,9 @@ const doMulti = (e) => {
 //single summon
 singleSummon.addEventListener("click", doSingle);
 reSingleSummon.addEventListener("click", doSingle);
+
 //multi summon
 multiSummon.addEventListener("click", doMulti);
-
 reMultiSummon.addEventListener("click", doMulti);
 
 const videoContainer = document.querySelector(".video-container");
@@ -195,4 +176,16 @@ video.addEventListener("ended", gotosummon);
 closeBtn.addEventListener("click", toClose);
 skipBtn.addEventListener("click", toSkip);
 
-let modalImg = document.getElementById("modalImg");
+///////////////////////////////////////////////////////
+
+let checkbox = document.getElementById("checkbox-banner");
+
+checkbox.addEventListener("click", (e) => {
+  ban_type = ban_type === "LIMITED" ? "STANDARD" : "LIMITED";
+  document
+    .getElementsByClassName("limited_banner")[0]
+    .classList.toggle("active");
+  document
+    .getElementsByClassName("standard_banner")[0]
+    .classList.toggle("active");
+});

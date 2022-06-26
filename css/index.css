@@ -150,6 +150,16 @@ button {
     0px 30px 30px rgba(0, 0, 0, 0.15), 0px 70px 60px rgba(0, 0, 0, 0.15);
 }
 
+.limited_banner,
+.standard_banner {
+  display: none;
+}
+
+.limited_banner.active,
+.standard_banner.active {
+  display: block;
+}
+
 .summon_btns {
   display: flex;
   padding: 0 25vw;
