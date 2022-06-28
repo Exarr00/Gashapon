@@ -81,7 +81,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #052fb5;
+  background-color: rgba(5, 47, 181, 0.7);
   height: 100vh;
   width: 100vw;
 }
@@ -138,9 +138,33 @@ button {
   font-size: 1rem;
 }
 
+#banner-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20vh auto 5vh auto;
+}
+
+#banner-section button{
+  width: 3%;
+  height: 3%;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+#banner-section button:hover, button:focus{
+  box-shadow: none;
+}
+
+#banner-section svg{
+  width: 100%;
+  height: 100%;
+}
+
 .summon_banner {
   display: flex;
-  margin: 20vh auto 5vh auto;
   max-width: 700px;
 }
 
@@ -264,6 +288,7 @@ button {
 #skip {
   font-size: 2vw;
   letter-spacing: normal;
+  user-select: none;
 }
 
 #skip div span {
@@ -354,9 +379,11 @@ button {
       display: none;
     }
   }
-
+  
+  #banner-section{
+    margin: 5vh 0 5vh 0;
+  }
   .summon_banner {
-    margin: 5vh auto 5vh auto;
     max-width: 450px;
   }
 
@@ -404,8 +431,11 @@ button {
 }
 
 @media screen and (max-height: 620px) {
+  #banner-section{
+    margin: 5vh 0 5vh 0;
+  }
+
   .summon_banner {
-    margin: 5vh auto 5vh auto;
     max-width: 400px;
   }
 }
