@@ -187,3 +187,4 @@ boxes.forEach((box) => {
     ban_type = e.target.id === "item-2" ? "STANDARD" : "LIMITED";
   });
 });
+

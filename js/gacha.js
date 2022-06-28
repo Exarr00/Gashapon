@@ -189,11 +189,11 @@ const getStandardFiveStar = () => {
 const standardRoll = () => {
   fourStarCounter++;
   fiveStarCounter++;
-  if (fourStarCounter === 10) {
-    return getStandardResult(4);
-  } else if (fiveStarCounter === 100) {
+  if (fiveStarCounter === 100) {
     guaranteedFiveStar = true;
     return getStandardResult(5);
+  } else if (fourStarCounter === 10) {
+    return getStandardResult(4);
   } else {
     return getStandardResult(
       baseProbability[getRandNum(baseProbability.length)]
