@@ -12,7 +12,9 @@ const multiSummon = document.getElementById("multi");
 const reSingleSummon = document.getElementById("resingle");
 const reMultiSummon = document.getElementById("remulti");
 const testGetHistory = document.getElementById("history-open");
-let ban_type = "LIMITED";
+let ban_type = document.getElementById("item-1").checked
+  ? "LIMITED"
+  : "STANDARD";
 
 //get user's gem data from localstorage
 let GEM_COUNT = Number(localStorage.getItem("GEMS_AMT"))
@@ -178,17 +180,11 @@ skipBtn.addEventListener("click", toSkip);
 
 ///////////////////////////////////////////////////////
 
-let checkboxes = document.querySelectorAll(".checkbox-banner");
+let boxes = document.querySelectorAll(".banner_slider");
 
-const changeBanner = (e) =>{
-  ban_type = ban_type === "LIMITED" ? "STANDARD" : "LIMITED";
-  document
-    .getElementsByClassName("limited_banner")[0]
-    .classList.toggle("active");
-  document
-    .getElementsByClassName("standard_banner")[0]
-    .classList.toggle("active");
-}
-
-checkboxes.forEach(checkbox => checkbox.addEventListener("click", changeBanner));
+boxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    ban_type = e.target.id === "item-2" ? "STANDARD" : "LIMITED";
+  });
+});
 
