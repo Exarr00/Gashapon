@@ -183,7 +183,6 @@ const getStandardFiveStar = () => {
   }
   const d = new Date();
   const RAND_NUM = Math.round((d.getTime() * Math.random()) % 4);
-  console.log("FIVE STAR SUMMONED");
   return fiveStars[RAND_NUM];
 };
 
