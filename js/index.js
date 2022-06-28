@@ -178,9 +178,9 @@ skipBtn.addEventListener("click", toSkip);
 
 ///////////////////////////////////////////////////////
 
-let checkbox = document.getElementById("checkbox-banner");
+let checkboxes = document.querySelectorAll(".checkbox-banner");
 
-checkbox.addEventListener("click", (e) => {
+const changeBanner = (e) =>{
   ban_type = ban_type === "LIMITED" ? "STANDARD" : "LIMITED";
   document
     .getElementsByClassName("limited_banner")[0]
@@ -188,4 +188,7 @@ checkbox.addEventListener("click", (e) => {
   document
     .getElementsByClassName("standard_banner")[0]
     .classList.toggle("active");
-});
+}
+
+checkboxes.forEach(checkbox => checkbox.addEventListener("click", changeBanner));
+
