@@ -1,0 +1,352 @@
+[
+    {
+    "name": "Kaguya Ultra Romantic",
+    "attribute": "Spell",
+    "rating": 5,
+    "featured": true,
+    "id": 1
+  },
+    {
+    "name": "Berserk",
+    "attribute": "Trap",
+    "rating": 5,
+    "featured": false,
+    "id": 2
+  },
+    {
+    "name": "FMA Brotherhood",
+    "attribute": "Spell",
+    "rating": 5,
+    "featured": false,
+    "id": 3
+  },
+    {
+    "name": "JoJo P5",
+    "attribute": "Spell",
+    "rating": 5,
+    "featured": false,
+    "id": 4
+  },
+    {
+    "name": "Gintama",
+    "attribute": "Spell",
+    "rating": 5,
+    "featured": false,
+    "id": 5
+  },
+    {
+    "name": "One Piece",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": true,
+    "id": 6
+  },
+    {
+    "name": "Steins Gate",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": true,
+    "id": 7
+  },
+    {
+    "name": "Grand Blue",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": true,
+    "id": 8
+  },
+    {
+    "name": "AOT",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 9
+  },
+    {
+    "name": "Ashita no Joe",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": false,
+    "id": 10
+  },
+    {
+    "name": "Hunter X Hunter",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 11
+  },
+    {
+    "name": "Houseki no Kuni",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": false,
+    "id": 12
+  },
+    {
+    "name": "Fruits Basket",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 13
+  },
+    {
+    "name": "Classroom of the Elite",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": false,
+    "id": 14
+  },
+    {
+    "name": "Koe no Katachi",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 15
+  },
+    {
+    "name": "Yotsuba",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 16
+  },
+    {
+    "name": "Clannad After Story",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 17
+  },
+    {
+    "name": "Spice and Wolf",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 18
+  },
+    {
+    "name": "Violet Evergarden",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 19
+  },
+    {
+    "name": "Akatsuki no Yona",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 20
+  },
+    {
+    "name": "Code Geass",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 21
+  },
+    {
+    "name": "Snafu",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 22
+  },
+    {
+    "name": "Spy X Family",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 23
+  },
+    {
+    "name": "Re Zero",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 24
+  },
+    {
+    "name": "Kimetsu no Yaiba",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 25
+  },
+ {
+    "name": "Made in Abyss",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 26
+  },
+    {
+    "name": "Kimi no na wa",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 27
+  },
+    {
+    "name": "One Punch Man",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 28
+  },
+    {
+    "name": "Mob Psycho",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 29
+  },
+    {
+    "name": "Chainsaw Man",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 30
+  },
+    {
+    "name": "Haikyuu",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 31
+  },
+    {
+    "name": "Solo Leveling",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 32
+  },
+    {
+    "name": "Shiguang Dailiren",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 33
+  },
+    {
+    "name": "Blue Period",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 34
+  },
+    {
+    "name": "Spirited Away",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 35
+  },
+    {
+    "name": "Death Note",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 36
+  },
+    {
+    "name": "Bakemongatari",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 37
+  },
+    {
+    "name": "Akira",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 38
+  },
+    {
+    "name": "Cowboy Bebop",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 39
+  },
+    {
+    "name": "ReLife",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 40
+  },
+    {
+    "name": "Odd Taxi",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 41
+  },
+    {
+    "name": "OverLord",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 42
+  },
+{
+    "name": "86",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 43
+  },
+    {
+    "name": "Seishun Buta Yarou",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 44
+  },
+    {
+    "name": "Vinland Saga",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 45
+  },
+    {
+    "name": "Fate Zero",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 46
+  },
+    {
+    "name": "Fate Stay Night",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 47
+  },
+    {
+    "name": "Gundam The Origin",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 48
+  },
+    {
+    "name": "Jujutsu Kaisen",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 49
+  },
+    {
+    "name": "Tokyo Ghoul",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 50
+  }
+]

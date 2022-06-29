@@ -1,354 +1,702 @@
 [
-    {
+  {
     "name": "Inori Yuzuriha",
     "attribute": "Light",
     "rating": 5,
     "featured": false,
     "id": 1
   },
-    {
+  {
     "name": "Saitama",
     "attribute": "Earth",
     "rating": 5,
     "featured": false,
     "id": 2
   },
-    {
+  {
     "name": "Miku Nakano",
     "attribute": "Water",
     "rating": 5,
     "featured": false,
     "id": 3
   },
-    {
+  {
     "name": "Lelouch Vi Britannia(Zero)",
     "attribute": "Dark",
     "rating": 5,
     "featured": false,
     "id": 4
   },
-    {
+  {
     "name": "Satoru Gojou",
     "attribute": "Divine",
     "rating": 5,
     "featured": false,
     "id": 5
   },
-    {
+  {
     "name": "Tatsumaki",
     "attribute": "Wind",
     "rating": 4,
     "featured": false,
     "id": 6
   },
-    {
+  {
     "name": "Nezuko Kamado",
     "attribute": "Fire",
     "rating": 4,
     "featured": false,
     "id": 7
   },
-    {
+  {
     "name": "Bishamonten",
     "attribute": "Divine",
     "rating": 4,
     "featured": false,
     "id": 8
   },
-    {
+  {
     "name": "Kurumi Tokisaki",
     "attribute": "Dark",
     "rating": 4,
     "featured": false,
     "id": 9
   },
-    {
+  {
     "name": "Lord Grim",
     "attribute": "Divine",
     "rating": 4,
     "featured": false,
     "id": 10
   },
-    {
+  {
     "name": "Dancing Rain",
     "attribute": "Fire",
     "rating": 4,
     "featured": false,
     "id": 11
   },
-    {
+  {
     "name": "Kuroyukihime",
     "attribute": "Dark",
     "rating": 4,
     "featured": false,
     "id": 12
   },
-    {
+  {
     "name": "Shu Ouma",
     "attribute": "Light",
     "rating": 4,
     "featured": false,
     "id": 13
   },
-    {
+  {
     "name": "Iori Kitahara",
     "attribute": "Water",
     "rating": 4,
     "featured": false,
     "id": 14
   },
-    {
+  {
     "name": "Ryouta Sakamoto",
     "attribute": "Earth",
     "rating": 4,
     "featured": false,
     "id": 15
   },
-    {
+  {
     "name": "Mumen Rider",
     "attribute": "Light",
     "rating": 3,
     "featured": false,
     "id": 16
   },
-    {
+  {
     "name": "Panda",
     "attribute": "Earth",
     "rating": 3,
     "featured": false,
     "id": 17
   },
-    {
+  {
     "name": "Forger Family",
     "attribute": "Dark",
     "rating": 3,
     "featured": false,
     "id": 18
   },
-    {
+  {
     "name": "Elma",
     "attribute": "Water",
     "rating": 3,
     "featured": false,
     "id": 19
   },
-    {
+  {
     "name": "Shana",
     "attribute": "Fire",
     "rating": 3,
     "featured": false,
     "id": 20
   },
-    {
+  {
     "name": "Dark Flame Master",
     "attribute": "Fire",
     "rating": 3,
     "featured": false,
     "id": 21
   },
-    {
+  {
     "name": "Senku Ishigami",
     "attribute": "Earth",
     "rating": 3,
     "featured": false,
     "id": 22
   },
-    {
+  {
     "name": "Holo",
     "attribute": "Divine",
     "rating": 3,
     "featured": false,
     "id": 23
   },
-    {
+  {
     "name": "Origami Tobiichi(Angel)",
     "attribute": "Divine",
     "rating": 3,
     "featured": false,
     "id": 24
   },
-    {
+  {
     "name": "Paripi Kongming",
     "attribute": "Earth",
     "rating": 3,
     "featured": false,
     "id": 25
   },
- {
+  {
     "name": "Rimuru Tempest (Slime Form)",
     "attribute": "Water",
     "rating": 3,
     "featured": false,
     "id": 26
   },
-    {
+  {
     "name": "Momonga",
     "attribute": "Dark",
     "rating": 3,
     "featured": false,
     "id": 27
   },
-    {
+  {
     "name": "Puck (Beast of the End)",
     "attribute": "Water",
     "rating": 3,
     "featured": false,
     "id": 28
   },
-    {
+  {
     "name": "Yamai Sisters",
     "attribute": "Wind",
     "rating": 3,
     "featured": false,
     "id": 29
   },
-    {
+  {
     "name": "Ais Wallenstein",
     "attribute": "Wind",
     "rating": 3,
     "featured": false,
     "id": 30
   },
-    {
+  {
     "name": "Filo",
     "attribute": "Wind",
     "rating": 3,
     "featured": false,
     "id": 31
   },
-    {
+  {
     "name": "Kanade Tachibana",
     "attribute": "Light",
     "rating": 3,
     "featured": false,
     "id": 32
   },
-    {
+  {
     "name": "Rin Okumura",
     "attribute": "Fire",
     "rating": 3,
     "featured": false,
     "id": 33
   },
-    {
+  {
     "name": "Arslan",
     "attribute": "Light",
     "rating": 3,
     "featured": false,
     "id": 34
   },
-    {
+  {
     "name": "Kazuma Yagami",
     "attribute": "Wind",
     "rating": 3,
     "featured": false,
     "id": 35
   },
-    {
+  {
     "name": "Yami (Toilet)",
     "attribute": "Dark",
     "rating": 3,
     "featured": false,
     "id": 36
   },
-    {
+  {
     "name": "Asta (Demon Form)",
     "attribute": "Dark",
     "rating": 3,
     "featured": false,
     "id": 37
   },
-    {
+  {
     "name": "Nagisa Furukawa",
     "attribute": "Light",
     "rating": 3,
     "featured": false,
     "id": 38
   },
-    {
+  {
     "name": "Ushio Okazaki",
     "attribute": "Light",
     "rating": 3,
     "featured": false,
     "id": 39
   },
-    {
+  {
     "name": "Sakura Mizukami",
     "attribute": "Water",
     "rating": 3,
     "featured": false,
     "id": 40
   },
-    {
+  {
     "name": "Sui-Souta",
     "attribute": "Water",
     "rating": 3,
     "featured": false,
     "id": 41
   },
-    {
+  {
     "name": "Terunori Kuga",
     "attribute": "Fire",
     "rating": 3,
     "featured": false,
     "id": 42
   },
-{
+  {
     "name": "Kotori Itsuka",
     "attribute": "Fire",
     "rating": 3,
     "featured": false,
     "id": 43
   },
-    {
+  {
     "name": "Goblin Slayer",
     "attribute": "Earth",
     "rating": 3,
     "featured": false,
     "id": 44
   },
-    {
+  {
     "name": "Chitose Karasuyama",
     "attribute": "Earth",
     "rating": 3,
     "featured": false,
     "id": 45
   },
-    {
+  {
     "name": "Tet",
     "attribute": "Divine",
     "rating": 3,
     "featured": false,
     "id": 46
   },
-    {
+  {
     "name": "Mob 0 Percent",
     "attribute": "Divine",
     "rating": 3,
     "featured": false,
     "id": 47
   },
-    {
+  {
     "name": "Hasuta",
     "attribute": "Wind",
     "rating": 3,
     "featured": false,
     "id": 48
   },
-    {
+  {
     "name": "King (Sin of Sloth)",
     "attribute": "Wind",
     "rating": 3,
     "featured": false,
     "id": 49
   },
-    {
+  {
     "name": "Ash",
     "attribute": "Divine",
     "rating": 3,
     "featured": false,
     "id": 50
+  },
+  {
+    "name": "Kaguya Ultra Romantic",
+    "attribute": "Spell",
+    "rating": 5,
+    "featured": false,
+    "id": 51
+  },
+  {
+    "name": "Berserk",
+    "attribute": "Trap",
+    "rating": 5,
+    "featured": false,
+    "id": 52
+  },
+  {
+    "name": "FMA Brotherhood",
+    "attribute": "Spell",
+    "rating": 5,
+    "featured": false,
+    "id": 53
+  },
+  {
+    "name": "JoJo",
+    "attribute": "Trap",
+    "rating": 5,
+    "featured": false,
+    "id": 54
+  },
+  {
+    "name": "Gintama",
+    "attribute": "Spell",
+    "rating": 5,
+    "featured": false,
+    "id": 55
+  },
+  {
+    "name": "One Piece",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": false,
+    "id": 56
+  },
+  {
+    "name": "Steins Gate",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 57
+  },
+  {
+    "name": "Grand Blue",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": false,
+    "id": 58
+  },
+  {
+    "name": "AOT",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 59
+  },
+  {
+    "name": "Ashita no Joe",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": false,
+    "id": 60
+  },
+  {
+    "name": "Hunter X Hunter",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 61
+  },
+  {
+    "name": "Houseki no Kuni",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": false,
+    "id": 62
+  },
+  {
+    "name": "Fruits Basket",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 63
+  },
+  {
+    "name": "Classroom of the Elite",
+    "attribute": "Trap",
+    "rating": 4,
+    "featured": false,
+    "id": 64
+  },
+  {
+    "name": "Koe no Katachi",
+    "attribute": "Spell",
+    "rating": 4,
+    "featured": false,
+    "id": 65
+  },
+  {
+    "name": "Yotsuba",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 66
+  },
+  {
+    "name": "Clannad After Story",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 67
+  },
+  {
+    "name": "Spice and Wolf",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 68
+  },
+  {
+    "name": "Violet Evergarden",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 69
+  },
+  {
+    "name": "Akatsuki no Yona",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 70
+  },
+  {
+    "name": "Code Geass",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 71
+  },
+  {
+    "name": "Snafu",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 72
+  },
+  {
+    "name": "Spy X Family",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 73
+  },
+  {
+    "name": "Re Zero",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 74
+  },
+  {
+    "name": "Kimetsu no Yaiba",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 75
+  },
+  {
+    "name": "Made in Abyss",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 76
+  },
+  {
+    "name": "Kimi no na wa",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 77
+  },
+  {
+    "name": "One Punch Man",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 78
+  },
+  {
+    "name": "Mob Psycho",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 79
+  },
+  {
+    "name": "Chainsaw Man",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 80
+  },
+  {
+    "name": "Haikyuu",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 81
+  },
+  {
+    "name": "Solo Leveling",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 82
+  },
+  {
+    "name": "Shiguang Dailiren",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 83
+  },
+  {
+    "name": "Blue Period",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 84
+  },
+  {
+    "name": "Spirited Away",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 85
+  },
+  {
+    "name": "Death Note",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 86
+  },
+  {
+    "name": "Bakemongatari",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 87
+  },
+  {
+    "name": "Akira",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 88
+  },
+  {
+    "name": "Cowboy Bebop",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 89
+  },
+  {
+    "name": "ReLife",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 90
+  },
+  {
+    "name": "Odd Taxi",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 91
+  },
+  {
+    "name": "OverLord",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 92
+  },
+  {
+    "name": "86",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 93
+  },
+  {
+    "name": "Seishun Buta Yarou",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 94
+  },
+  {
+    "name": "Vinland Saga",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 95
+  },
+  {
+    "name": "Fate Zero",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 96
+  },
+  {
+    "name": "Fate Stay Night",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 97
+  },
+  {
+    "name": "Gundam The Origin",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 98
+  },
+  {
+    "name": "Jujutsu Kaisen",
+    "attribute": "Spell",
+    "rating": 3,
+    "featured": false,
+    "id": 99
+  },
+  {
+    "name": "Tokyo Ghoul",
+    "attribute": "Trap",
+    "rating": 3,
+    "featured": false,
+    "id": 100
   }
- 
 ]
-

@@ -26,12 +26,16 @@ let PURCHASE_AMOUNT = 0;
 //set user's gem data to element
 document.getElementById("GEM_AMT").textContent = GEM_COUNT;
 
-services.getChar().then((data) => {
-  gacha.setGacha(data);
-  singleSummon.disabled = false;
-  multiSummon.disabled = false;
-  testGetHistory.disabled = false;
-});
+const setChar = (banner) => {
+  services.getChar(banner).then((data) => {
+    gacha.setGacha(data);
+    singleSummon.disabled = false;
+    multiSummon.disabled = false;
+    testGetHistory.disabled = false;
+  });
+}
+
+setChar('./characters.json')
 
 //check if user has reached >10k gems
 const whaleWatchers = () => {
@@ -184,7 +188,20 @@ let boxes = document.querySelectorAll(".banner_slider");
 
 boxes.forEach((box) => {
   box.addEventListener("click", (e) => {
-    ban_type = e.target.id === "item-2" ? "STANDARD" : "LIMITED";
+    ban_type = e.target.id === "item-3" ? "STANDARD" : "LIMITED";
+    switch(e.target.id){
+      case 'item-1':
+        setChar('./characters.json')
+        break;
+      case 'item-2':
+        setChar('./equips.json')
+        break;
+      case 'item-3':
+        setChar('./standard.json')
+        break;
+      default:
+        break;
+    }
   });
 });
 
