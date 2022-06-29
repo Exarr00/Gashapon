@@ -140,8 +140,8 @@ button {
 
 .summon_banner {
   display: flex;
-  margin: 10vh auto 0 auto;
-  max-width: 700px;
+  margin: 10vh auto 10vh auto;
+  max-width: 1000px;
   max-height: 150px;
   position: relative;
   width: 100%;
@@ -411,11 +411,9 @@ img {
     }
   }
 
-  #banner-section {
-    margin: 5vh 0 5vh 0;
-  }
   .summon_banner {
-    max-width: 450px;
+    margin: 5vh auto 5vh auto;
+    max-width: 650px;
   }
 
   .summon_btns {
@@ -462,11 +460,7 @@ img {
 }
 
 @media screen and (max-height: 620px) {
-  #banner-section {
-    margin: 5vh 0 5vh 0;
-  }
-
   .summon_banner {
-    max-width: 90%;
+    max-width: 650px;
   }
 }
