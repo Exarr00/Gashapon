@@ -138,36 +138,11 @@ button {
   font-size: 1rem;
 }
 
-#banner-section{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 20vh auto 5vh auto;
-}
-
-#banner-section button{
-  width: 3%;
-  height: 3%;
-  border: none;
-  background-color: transparent;
-  border-radius: 0;
-}
-
-#banner-section button:hover, button:focus{
-  box-shadow: none;
-}
-
-#banner-section svg{
-  width: 100%;
-  height: 100%;
-}
-
 .summon_banner {
   display: flex;
+  margin: 10vh auto 0 auto;
   max-width: 700px;
   max-height: 150px;
-  overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
@@ -258,7 +233,7 @@ img {
   color: black;
   font-size: 2.5ch;
   border-bottom: 1px dotted currentColor;
-  background-color: rgba(100, 110, 245, 0.404);
+  background-color: rgba(100, 110, 245, 0.692);
   position: relative;
   letter-spacing: 0.25ch;
 }
@@ -435,8 +410,8 @@ img {
       display: none;
     }
   }
-  
-  #banner-section{
+
+  #banner-section {
     margin: 5vh 0 5vh 0;
   }
   .summon_banner {
@@ -487,11 +462,11 @@ img {
 }
 
 @media screen and (max-height: 620px) {
-  #banner-section{
+  #banner-section {
     margin: 5vh 0 5vh 0;
   }
 
   .summon_banner {
-    max-width: 400px;
+    max-width: 90%;
   }
 }
