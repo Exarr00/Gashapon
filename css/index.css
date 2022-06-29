@@ -138,33 +138,9 @@ button {
   font-size: 1rem;
 }
 
-#banner-section{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 20vh auto 5vh auto;
-}
-
-#banner-section button{
-  width: 3%;
-  height: 3%;
-  border: none;
-  background-color: transparent;
-  border-radius: 0;
-}
-
-#banner-section button:hover, button:focus{
-  box-shadow: none;
-}
-
-#banner-section svg{
-  width: 100%;
-  height: 100%;
-}
-
 .summon_banner {
   display: flex;
+  margin: 10vh auto 0 auto;
   max-width: 700px;
   max-height: 150px;
   overflow: hidden;
@@ -435,8 +411,8 @@ img {
       display: none;
     }
   }
-  
-  #banner-section{
+
+  #banner-section {
     margin: 5vh 0 5vh 0;
   }
   .summon_banner {
@@ -487,7 +463,7 @@ img {
 }
 
 @media screen and (max-height: 620px) {
-  #banner-section{
+  #banner-section {
     margin: 5vh 0 5vh 0;
   }
 
