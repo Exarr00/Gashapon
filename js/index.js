@@ -37,7 +37,7 @@ services.getChar().then((data) => {
 const whaleWatchers = () => {
   let icon = document.querySelectorAll(".status_icon");
   let currStatus =
-    PURCHASE_AMOUNT >= 10000 ? 2 : PURCHASE_AMOUNT >= 5000 ? 1 : 0;
+    PURCHASE_AMOUNT >= 50000 ? 2 : PURCHASE_AMOUNT >= 10000 ? 1 : 0;
   icon.forEach((item) => {
     if (item !== icon[currStatus]) {
       item.setAttribute("hidden", true);
