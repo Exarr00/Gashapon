@@ -33,9 +33,9 @@ const setChar = (banner) => {
     multiSummon.disabled = false;
     testGetHistory.disabled = false;
   });
-}
+};
 
-setChar('./characters.json')
+setChar("./characters.json");
 
 //check if user has reached >10k gems
 const whaleWatchers = () => {
@@ -189,19 +189,18 @@ let boxes = document.querySelectorAll(".banner_slider");
 boxes.forEach((box) => {
   box.addEventListener("click", (e) => {
     ban_type = e.target.id === "item-3" ? "STANDARD" : "LIMITED";
-    switch(e.target.id){
-      case 'item-1':
-        setChar('./characters.json')
+    switch (e.target.id) {
+      case "item-1":
+        setChar("./characters.json");
         break;
-      case 'item-2':
-        setChar('./equips.json')
+      case "item-2":
+        setChar("./equips.json");
         break;
-      case 'item-3':
-        setChar('./standard.json')
+      case "item-3":
+        setChar("./standard.json");
         break;
       default:
         break;
     }
   });
 });
-
