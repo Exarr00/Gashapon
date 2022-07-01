@@ -204,3 +204,7 @@ boxes.forEach((box) => {
     }
   });
 });
+
+document.getElementById("sort4").addEventListener("click", () => {
+  history.filterForFour();
+});
