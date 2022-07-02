@@ -1,5 +1,5 @@
 const history = [];
-let historyList = document.getElementById("history-table");
+const historyList = document.getElementById("history-table");
 const pageNumber = document.getElementById("current-number");
 const rarity = { 3: "bronzeHistory", 4: "silverHistory", 5: "goldHistory" };
 
@@ -124,10 +124,14 @@ const changePage = () => {
   addListeners();
 };
 
-const filterForFour = () => {
-  const fourStarList = history.filter((item) => item.rating === 4);
+const filterForStar = (star) => {
+  const starList = history.filter((item) => item.rating === star);
+  let slicedList = starList.slice(
+    (Number(pageNumber.textContent) - 1) * 7,
+    7 * Number(pageNumber.textContent)
+  );
   removeChildren();
-  fourStarList.forEach((item) => {
+  slicedList.forEach((item) => {
     createChildren(item, rarity[String(item.rating)]);
   });
   addListeners();
@@ -139,5 +143,5 @@ export default {
   changePage,
   checkPrevious,
   checkNext,
-  filterForFour,
+  filterForStar,
 };

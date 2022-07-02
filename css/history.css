@@ -86,10 +86,10 @@ tr {
 
 /* Modal Content (image) */
 #modal-content-img {
-  margin: 5vh auto;
+  margin: 2.5vh auto;
   display: block;
-  height: 80vh;
-  max-height: 500px;
+  width: 60vw;
+  max-width: 500px;
 }
 
 @-webkit-keyframes zoom {
