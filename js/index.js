@@ -205,6 +205,8 @@ boxes.forEach((box) => {
   });
 });
 
-document.getElementById("sort4").addEventListener("click", () => {
-  history.filterForFour();
+document.querySelectorAll(".sort-star").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    history.filterForStar(Number(e.target.value));
+  });
 });
