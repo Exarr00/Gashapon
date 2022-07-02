@@ -1,12 +1,5 @@
 [
   {
-    "name": "Inori Yuzuriha",
-    "attribute": "Light",
-    "rating": 5,
-    "featured": false,
-    "id": 1
-  },
-  {
     "name": "Saitama",
     "attribute": "Earth",
     "rating": 5,
@@ -350,13 +343,6 @@
     "id": 50
   },
   {
-    "name": "Kaguya Ultra Romantic",
-    "attribute": "Spell",
-    "rating": 5,
-    "featured": false,
-    "id": 51
-  },
-  {
     "name": "Berserk",
     "attribute": "Trap",
     "rating": 5,
@@ -371,7 +357,7 @@
     "id": 53
   },
   {
-    "name": "JoJo",
+    "name": "JoJo P5",
     "attribute": "Trap",
     "rating": 5,
     "featured": false,
@@ -690,13 +676,13 @@
     "attribute": "Spell",
     "rating": 3,
     "featured": false,
-    "id": 99
+    "id": 51
   },
   {
     "name": "Tokyo Ghoul",
     "attribute": "Trap",
     "rating": 3,
     "featured": false,
-    "id": 100
+    "id": 1
   }
 ]
