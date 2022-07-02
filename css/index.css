@@ -232,10 +232,10 @@ img {
   width: fit-content;
   color: black;
   font-size: 2.5ch;
-  border-bottom: 1px dotted currentColor;
-  background-color: rgba(100, 110, 245, 0.692);
+  background-color: white;
+  border-radius: 100%;
+  line-height: 1;
   position: relative;
-  letter-spacing: 0.25ch;
 }
 
 #rate_info > .tooltip {
@@ -246,7 +246,10 @@ img {
   color: #ffffff;
   width: 50ch;
   padding: 0em 1em;
-  left: -100%;
+  line-height: 1.5;
+  left: 50%;
+  transform: translateX(-50%);
+
 }
 
 #rate_info > .tooltip li {
