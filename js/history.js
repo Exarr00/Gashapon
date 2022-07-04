@@ -2,10 +2,11 @@ const history = [];
 const historyList = document.getElementById("history-table");
 const pageNumber = document.getElementById("current-number");
 const rarity = { 3: "bronzeHistory", 4: "silverHistory", 5: "goldHistory" };
+let starList = [];
+let activeFilter = false;
 
 const getHistory = () => {
-  const actualHistory = history.reverse();
-  return actualHistory;
+  return activeFilter ? starList.reverse() : history.reverse();
 };
 
 const checkPrevious = () => {
@@ -125,7 +126,8 @@ const changePage = () => {
 };
 
 const filterForStar = (star) => {
-  const starList = history.filter((item) => item.rating === star);
+  activeFilter = true;
+  starList = history.filter((item) => item.rating === star);
   let slicedList = starList.slice(
     (Number(pageNumber.textContent) - 1) * 7,
     7 * Number(pageNumber.textContent)
