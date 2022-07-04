@@ -2,11 +2,14 @@ const history = [];
 const historyList = document.getElementById("history-table");
 const pageNumber = document.getElementById("current-number");
 const rarity = { 3: "bronzeHistory", 4: "silverHistory", 5: "goldHistory" };
-let starList = [];
 let activeFilter = false;
+let starFilter = 3;
 
 const getHistory = () => {
-  return activeFilter ? starList.reverse() : history.reverse();
+  const activeHistory = activeFilter
+    ? history.filter((item) => item.rating === starFilter).reverse()
+    : history.reverse();
+  return activeHistory;
 };
 
 const checkPrevious = () => {
@@ -127,16 +130,28 @@ const changePage = () => {
 
 const filterForStar = (star) => {
   activeFilter = true;
-  starList = history.filter((item) => item.rating === star);
-  let slicedList = starList.slice(
-    (Number(pageNumber.textContent) - 1) * 7,
-    7 * Number(pageNumber.textContent)
-  );
+  starFilter = star;
+  pageNumber.textContent = 1;
+  let slicedList = history
+    .filter((item) => item.rating === star)
+    .slice(
+      (Number(pageNumber.textContent) - 1) * 7,
+      7 * Number(pageNumber.textContent)
+    );
   removeChildren();
   slicedList.forEach((item) => {
     createChildren(item, rarity[String(item.rating)]);
   });
   addListeners();
+};
+
+const resetFilter = () => {
+  if (activeFilter) {
+    activeFilter = false;
+    pageNumber.textContent = 1;
+    changePage();
+  }
+  return;
 };
 
 export default {
@@ -146,4 +161,5 @@ export default {
   checkPrevious,
   checkNext,
   filterForStar,
+  resetFilter,
 };

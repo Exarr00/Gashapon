@@ -1,5 +1,9 @@
 /* CSS for elements related to summon history */
 
+.right_align {
+  margin-right: 0.5rem;
+}
+
 .history-list {
   height: fit-content;
   margin-top: 3%;
