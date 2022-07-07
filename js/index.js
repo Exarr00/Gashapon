@@ -98,7 +98,7 @@ pageBtns.forEach((btn) => {
 });
 
 historyOpen.addEventListener("click", () => {
-  history.setHistory();
+  history.getHistory();
   history.changePage();
   historyModal.showModal();
 });

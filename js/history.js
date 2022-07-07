@@ -6,15 +6,15 @@ let filter = {
   active: false,
   star: 3,
 };
-let currentListing = [];
-
-const setHistory = () => {
-  currentListing = filter.active
-    ? history.filter((item) => item.rating === filter.star).reverse()
-    : history.reverse();
-};
 
 const getHistory = () => {
+  const currentListing = filter.active
+    ? history.filter((item) => item.rating === filter.star).reverse()
+    : history
+        .filter((item) => {
+          return item;
+        })
+        .reverse();
   return currentListing;
 };
 
@@ -165,7 +165,7 @@ const resetFilter = () => {
 };
 
 export default {
-  setHistory,
+  getHistory,
   updateHistory,
   changePage,
   checkPrevious,
