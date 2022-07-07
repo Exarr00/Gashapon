@@ -98,6 +98,7 @@ pageBtns.forEach((btn) => {
 });
 
 historyOpen.addEventListener("click", () => {
+  history.getHistory();
   history.changePage();
   historyModal.showModal();
 });
@@ -162,7 +163,6 @@ const gotosummon = () => {
   // document.body.style['overflow'] = 'hidden';
   videoContainer.style.display = "none";
   video.currentTime = 0; //mobile
-  // console.log(getComputedStyle(container).display);
   container.style.display = "grid";
 };
 
