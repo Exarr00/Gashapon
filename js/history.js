@@ -6,13 +6,22 @@ let filter = {
   active: false,
   star: 3,
 };
+let currentListing = [];
 
-const getHistory = () => {
-  const activeHistory = filter.active
+const setHistory = () => {
+  currentListing = filter.active
     ? history.filter((item) => item.rating === filter.star).reverse()
     : history.reverse();
-  console.log(history);
-  return activeHistory;
+};
+
+const getHistory = () => {
+  return currentListing;
+};
+
+const getSize = () => {
+  return filter.active
+    ? history.filter((item) => item.rating === filter.star)
+    : history;
 };
 
 const checkPrevious = () => {
@@ -24,8 +33,8 @@ const checkPrevious = () => {
 
 const checkNext = () => {
   if (
-    getHistory().length / 7 > 1 &&
-    getHistory().length / 7 > Number(pageNumber.textContent)
+    getSize().length / 7 > 1 &&
+    getSize().length / 7 > Number(pageNumber.textContent)
   ) {
     pageNumber.textContent = Number(pageNumber.textContent) + 1;
     changePage();
@@ -156,7 +165,7 @@ const resetFilter = () => {
 };
 
 export default {
-  getHistory,
+  setHistory,
   updateHistory,
   changePage,
   checkPrevious,
