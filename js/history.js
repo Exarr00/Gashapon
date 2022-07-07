@@ -2,13 +2,16 @@ const history = [];
 const historyList = document.getElementById("history-table");
 const pageNumber = document.getElementById("current-number");
 const rarity = { 3: "bronzeHistory", 4: "silverHistory", 5: "goldHistory" };
-let activeFilter = false;
-let starFilter = 3;
+let filter = {
+  active: false,
+  star: 3,
+};
 
 const getHistory = () => {
-  const activeHistory = activeFilter
-    ? history.filter((item) => item.rating === starFilter).reverse()
+  const activeHistory = filter.active
+    ? history.filter((item) => item.rating === filter.star).reverse()
     : history.reverse();
+  console.log(history);
   return activeHistory;
 };
 
@@ -30,7 +33,6 @@ const checkNext = () => {
 };
 
 const updateHistory = (...result) => {
-  console.log(result);
   const the_history = result.reduce((rollInfo, { name, rating }) => {
     rollInfo.push({
       name: name,
@@ -98,7 +100,6 @@ const addListeners = () => {
   //add image click listeners
   document.querySelectorAll(".historyImageSmall").forEach((item) => {
     item.addEventListener("click", (item2) => {
-      console.log(item2);
       if (document.getElementById("modalImg").style.display !== "block") {
         document.getElementById("modal-content-img").src = item2.target.src;
         //hacky solution to set caption to textconent associated with image
@@ -129,8 +130,8 @@ const changePage = () => {
 };
 
 const filterForStar = (star) => {
-  activeFilter = true;
-  starFilter = star;
+  filter.active = true;
+  filter.star = star;
   pageNumber.textContent = 1;
   let slicedList = history
     .filter((item) => item.rating === star)
@@ -146,8 +147,8 @@ const filterForStar = (star) => {
 };
 
 const resetFilter = () => {
-  if (activeFilter) {
-    activeFilter = false;
+  if (filter.active) {
+    filter.active = false;
     pageNumber.textContent = 1;
     changePage();
   }
