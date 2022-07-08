@@ -154,3 +154,9 @@ tr {
 .goldHistory {
   color: orange;
 }
+
+.active-star{
+  background-color: royalblue;
+  border-color: black;
+  color: white;
+}

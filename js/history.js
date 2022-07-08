@@ -1,7 +1,7 @@
 const history = [];
-const historyList = document.getElementById("history-table");
-const pageNumber = document.getElementById("current-number");
-const rarity = { 3: "bronzeHistory", 4: "silverHistory", 5: "goldHistory" };
+const historyList = document.getElementById('history-table');
+const pageNumber = document.getElementById('current-number');
+const rarity = { 3: 'bronzeHistory', 4: 'silverHistory', 5: 'goldHistory' };
 let filter = {
   active: false,
   star: 3,
@@ -61,17 +61,17 @@ const removeChildren = () => {
 
 const createChildren = (item, rarity) => {
   //create elements for the table
-  let itemName = document.createElement("td");
-  let itemDate = document.createElement("td");
-  let itemRating = document.createElement("td");
-  let tableRow = document.createElement("tr");
-  let itemImageCell = document.createElement("td");
-  let imageSmall = document.createElement("img");
+  let itemName = document.createElement('td');
+  let itemDate = document.createElement('td');
+  let itemRating = document.createElement('td');
+  let tableRow = document.createElement('tr');
+  let itemImageCell = document.createElement('td');
+  let imageSmall = document.createElement('img');
 
   tableRow.classList.add(rarity);
   //set content and attributes for elements
-  imageSmall.src = `./imgs/cards/${item.name.split(" ").join("_")}.png`;
-  itemImageCell.setAttribute("class", "historyImageSmall");
+  imageSmall.src = `./imgs/cards/${item.name.split(' ').join('_')}.png`;
+  itemImageCell.setAttribute('class', 'historyImageSmall');
 
   itemName.textContent = item.name;
   itemDate.textContent = item.date.toDateString();
@@ -88,17 +88,17 @@ const createChildren = (item, rarity) => {
 
 const addListeners = () => {
   //Elements for image modal
-  let imageLarge = document.createElement("img");
-  let imageModal = document.createElement("div");
-  let imageCaption = document.createElement("div");
-  let closeImage = document.createElement("span");
+  let imageLarge = document.createElement('img');
+  let imageModal = document.createElement('div');
+  let imageCaption = document.createElement('div');
+  let closeImage = document.createElement('span');
 
   //Set content for image modal
-  imageLarge.setAttribute("id", "modal-content-img");
-  imageModal.setAttribute("id", "modalImg");
-  imageCaption.setAttribute("id", "imageCaption");
-  closeImage.setAttribute("id", "closeImage");
-  closeImage.textContent = "X";
+  imageLarge.setAttribute('id', 'modal-content-img');
+  imageModal.setAttribute('id', 'modalImg');
+  imageCaption.setAttribute('id', 'imageCaption');
+  closeImage.setAttribute('id', 'closeImage');
+  closeImage.textContent = 'X';
 
   //Append image modal to table
   imageModal.appendChild(closeImage);
@@ -107,21 +107,21 @@ const addListeners = () => {
   historyList.appendChild(imageModal);
 
   //add image click listeners
-  document.querySelectorAll(".historyImageSmall").forEach((item) => {
-    item.addEventListener("click", (item2) => {
-      if (document.getElementById("modalImg").style.display !== "block") {
-        document.getElementById("modal-content-img").src = item2.target.src;
+  document.querySelectorAll('.historyImageSmall').forEach((item) => {
+    item.addEventListener('click', (item2) => {
+      if (document.getElementById('modalImg').style.display !== 'block') {
+        document.getElementById('modal-content-img').src = item2.target.src;
         //hacky solution to set caption to textconent associated with image
-        document.getElementById("imageCaption").textContent = item2.target.src
+        document.getElementById('imageCaption').textContent = item2.target.src
           .substring(33)
-          .replace(".png", "")
-          .replaceAll("_", " ");
-        document.getElementById("modalImg").style.display = "block";
+          .replace('.png', '')
+          .replaceAll('_', ' ');
+        document.getElementById('modalImg').style.display = 'block';
       }
     });
   });
-  document.getElementById("closeImage").addEventListener("click", () => {
-    document.getElementById("modalImg").style.display = "none";
+  document.getElementById('closeImage').addEventListener('click', () => {
+    document.getElementById('modalImg').style.display = 'none';
   });
 };
 
@@ -142,7 +142,7 @@ const filterForStar = (star) => {
   filter.active = true;
   filter.star = star;
   pageNumber.textContent = 1;
-  let slicedList = history
+  let slicedList = getHistory()
     .filter((item) => item.rating === star)
     .slice(
       (Number(pageNumber.textContent) - 1) * 7,
