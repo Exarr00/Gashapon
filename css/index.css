@@ -21,8 +21,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -36,7 +36,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  cursor: url('../imgs/cursor_black.png'), auto;
+  cursor: url("../imgs/cursor_black.png"), auto;
 }
 
 /* A elements that don't have a class get default styles */
@@ -78,7 +78,7 @@ select {
 /* CSS EDITS */
 
 body {
-  background-image: url('../imgs/928887.jpg');
+  background-image: url("../imgs/928887.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -110,7 +110,7 @@ button {
   letter-spacing: 5px;
   margin: 0.5em;
   padding: 0.5em 0.5em;
-  cursor: url('../imgs/pointer.png'), pointer;
+  cursor: url("../imgs/pointer.png"), pointer;
 }
 
 .header_bar {
@@ -161,6 +161,7 @@ button {
   right: 0;
   margin: auto;
   transition: transform 0.4s ease;
+  cursor: url("../imgs/cursor_black.png"), auto;
 }
 
 .cards {
@@ -170,7 +171,7 @@ button {
   margin-bottom: 20px;
 }
 
-input[type='radio'] {
+input[type="radio"] {
   display: none;
 }
 
@@ -257,7 +258,7 @@ img {
 }
 
 #rate_info .tooltip::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
   left: 50%;
@@ -378,7 +379,7 @@ img {
 }
 
 .purchase_counter {
-  background: url('../imgs/ocean.jpg') no-repeat center/cover;
+  background: url("../imgs/ocean.jpg") no-repeat center/cover;
   padding: 1ch 2ch;
   display: flex;
   align-items: center;
