@@ -1,5 +1,8 @@
 /* CSS for elements related to summon history */
 
+/* google font for the names of the cards */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
+
 .right_align {
   margin-right: 0.5rem;
 }
@@ -21,6 +24,8 @@
 #history-table tr * {
   text-align: center;
   padding: 5px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 150%;
 }
 
 tr {
@@ -144,15 +149,15 @@ tr {
 }
 
 .bronzeHistory {
-  color: brown;
+  color: rgb(121, 66, 14);
 }
 
 .silverHistory {
-  color: silver;
+  color: rgb(128, 124, 124);
 }
 
 .goldHistory {
-  color: orange;
+  color: rgb(184, 169, 40);
 }
 
 .active-star{
