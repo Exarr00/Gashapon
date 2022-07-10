@@ -50,12 +50,9 @@ const whaleWatchers = () => {
 
 //initial page load check
 whaleWatchers();
-<<<<<<< HEAD
-const incrementBtns = document.querySelectorAll(".purchase_btn");
-=======
 
 const incrementBtns = document.querySelectorAll('.purchase_btn');
->>>>>>> origin
+
 
 //purchasing gems function
 incrementBtns.forEach((btn) => {
